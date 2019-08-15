@@ -1,6 +1,8 @@
 import Component from '@ember/component';
+import layout from '../../templates/components/dds/select-box';
 
 export default Component.extend({
+  layout,
   actions: {
     onChange(value) {
       this.set('field', value);

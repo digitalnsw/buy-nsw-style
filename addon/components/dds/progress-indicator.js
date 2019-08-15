@@ -1,6 +1,8 @@
 import Component from '@ember/component';
+import layout from '../../templates/components/dds/progress-indicator';
 
 export default Component.extend({
+  layout,
   activeMenu: null,
   didReceiveAttrs() {
     this._super(...arguments);

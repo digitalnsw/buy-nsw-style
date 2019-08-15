@@ -1,6 +1,8 @@
 import Component from '@ember/component';
+import layout from '../../templates/components/dds/checkbox-item';
 
 export default Component.extend({
+  layout,
   checked: false,
   init() {
     this._super(...arguments);
