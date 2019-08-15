@@ -1,0 +1,16 @@
+{{#each items as |item|}}
+  <div class="little-padding">
+    {{dds/radio-button
+      value=item.key
+      label=item.label
+      field=(mut field)
+      disabled=disabled
+      onChange=(action "onChange")
+    }}
+  </div>
+{{/each}}
+{{#if (and (or showError hasChanged) invalid)}}
+  {{dds/validation-error type="error" message=errorMessage float="left"}}
+{{else if (and apiError (not hasChanged))}}
+  {{dds/validation-error type="warning" message=apiError float="left"}}
+{{/if}}

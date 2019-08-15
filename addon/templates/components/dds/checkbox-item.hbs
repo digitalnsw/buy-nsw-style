@@ -1,0 +1,27 @@
+<p class="thin-lines">
+  <br>
+  <label class="au-control-input">
+    <input
+      class="au-control-input__input"
+      type="checkbox"
+      name={{name}}
+      onChange={{action "toggle"}}
+      checked={{if checked "checked" ""}}
+      disabled={{if disabled "disabled" ""}}
+    >
+    <span class="au-control-input__text">
+      {{#if bold}}
+        <b>
+          {{label}}
+        </b>
+      {{else}}
+        {{label}}
+      {{/if}}
+    </span>
+  </label>
+</p>
+{{#if description}}
+  <p class="checkbox-description">
+    {{description}}
+  </p>
+{{/if}}

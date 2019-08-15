@@ -1,0 +1,21 @@
+<aside class="au-side-nav">
+  <b>{{title}}</b>
+  <div id="nav-default" class="au-side-nav__content">
+    <ul class="au-link-list">
+      {{#each links as |link|}}
+        {{#unless link.hide}}
+          <li>
+            {{#if link.anchor}}
+              <a href={{link.anchor}}>
+                {{link.name}}
+              </a>
+            {{else}}
+              {{link-to link.name link.route}}
+            {{/if}}
+          </li>
+          <div class="clear-both"></div>
+        {{/unless}}
+      {{/each}}
+    </ul>
+  </div>
+</aside>

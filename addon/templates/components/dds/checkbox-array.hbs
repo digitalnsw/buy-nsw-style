@@ -1,0 +1,47 @@
+{{#if checkAll}}
+  <div class={{if (or break wide) "col-sm-36" "col-sm-9"}}>
+    <p>
+      <label class="au-control-input">
+        <input
+          class="au-control-input__input"
+          type="checkbox"
+          onChange={{action "checkAll"}}
+          checked={{allChecked}}
+        >
+        <span class="au-control-input__text">
+          <b>
+            {{#if allChecked}}
+              Unselect All
+            {{else}}
+              Select All
+            {{/if}}
+          </b>
+        </span>
+      </label>
+    </p>
+  </div>
+  {{#if (or break wide)}}
+    <div class="clear-both"></div>
+  {{/if}}
+{{/if}}
+{{#each items as |item|}}
+  <div class={{if wide (if break "col-sm-36" "col-sm-18") "col-sm-9"}}>
+    {{dds/checkbox-item
+      name=item.key
+      label=item.label
+      field=(mut field)
+      bold=bold
+      disabled=disabled
+      onChange=onChange
+      description=item.description
+    }}
+  </div>
+  {{#if break}}
+    <div class="clear-both"></div>
+  {{/if}}
+{{/each}}
+{{#if (and (or showError hasChanged) invalid)}}
+  {{dds/validation-error type="error" message=errorMessage float="right"}}
+{{else if (and apiError (not hasChanged))}}
+  {{dds/validation-error type="warning" message=apiError float="right"}}
+{{/if}}

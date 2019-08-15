@@ -1,0 +1,16 @@
+<nav
+  class="au-breadcrumbs"
+  aria-label="breadcrumb"
+>
+  <ul class="au-link-list au-link-list--inline">
+    {{#each links as |link|}}
+      <li>
+        {{#if link.param}}
+          {{link-to link.name link.route link.param}}
+        {{else}}
+          {{link-to link.name link.route}}
+        {{/if}}
+      </li>
+    {{/each}}
+  </ul>
+</nav>

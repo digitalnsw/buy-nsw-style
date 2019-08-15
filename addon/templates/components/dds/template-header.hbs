@@ -1,0 +1,35 @@
+<header class="au-header au-header--dark" role="banner">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-36">
+        {{#link-to "index" class="au-header__brand"}}
+          <img
+            class="au-header__brand-image"
+            alt="Insert alternate text here"
+            src="/ict/images/logo-white.svg"
+          >
+        {{/link-to}}
+        {{# if auth.user }}
+          <a class="au-btn au-btn--secondary au-btn--dark right-link" onClick={{action "logout"}}>Sign out</a>
+        {{ else }}
+          {{ link-to "Log in or sign up" "sign-in" class="au-btn au-btn--secondary au-btn--dark au-btn--wide right-link" }}
+        {{/ if }}
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-36">
+        {{#link-to "index" class="au-header__brand"}}
+          <div class="au-header__text">
+            <h2 class="au-header__heading au-display-xxl">buy.nsw</h2>
+            <div class="au-header__heading au-display-md">Simplifying NSW government procurement</div>
+          </div>
+        {{/link-to}}
+      </div>
+    </div>
+  </div>
+</header>
+{{#if nonav}}
+  <hr class="simple-white">
+{{else}}
+  {{dds/main-nav}}
+{{/if}}

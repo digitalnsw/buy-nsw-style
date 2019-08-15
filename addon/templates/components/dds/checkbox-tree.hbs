@@ -1,0 +1,38 @@
+{{#each items as |item|}}
+  <div>
+    {{dds/checkbox-item
+      name=item.key
+      label=item.label
+      field=(mut field)
+      bold=true
+      disabled=disabled
+      onChange=onChange
+      description=item.description
+    }}
+  </div>
+  {{#if (and item.subItems (array-contains field item.key))}}
+    <div class="col-sm-2"></div>
+    <div class="col-sm-34">
+      {{#each item.subItems as |subItem|}}
+        <div class="col-sm-36 col-lg-18">
+          {{dds/checkbox-item
+            name=subItem.key
+            label=subItem.label
+            field=(mut field)
+            bold=false
+            disabled=disabled
+            onChange=onChange
+          }}
+        </div>
+      {{/each}}
+    </div>
+    <div class="clear-both"></div>
+    <br>
+  {{/if}}
+  <div class="clear-both"></div>
+{{/each}}
+{{#if (and (or showError hasChanged) invalid)}}
+  {{dds/validation-error type="error" message=errorMessage float="right"}}
+{{else if (and apiError (not hasChanged))}}
+  {{dds/validation-error type=apiError float="right"}}
+{{/if}}

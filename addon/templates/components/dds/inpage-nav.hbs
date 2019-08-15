@@ -1,0 +1,18 @@
+<nav class="au-inpage-nav-links" aria-label="in page navigation">
+  <h4 class="au-inpage-nav-links__heading"><b>On this page</b></h4>
+  <ul class="au-link-list">
+    {{#each sections as |item|}}
+      {{#unless item.hide}}
+        <li>
+          {{#if item.anchor}}
+            {{scroll-to label=item.name target=(concat "#" item.anchor) tagName="a" duration=300 classNames="pointer"}}
+          {{else}}
+            {{link-to item.name item.route}}
+          {{/if}}
+        </li>
+        <div class="clear-both"></div>
+      {{/unless}}
+    {{/each}}
+  </ul>
+  <div class="clear-both"></div>
+</nav>

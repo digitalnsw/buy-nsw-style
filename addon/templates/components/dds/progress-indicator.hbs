@@ -1,0 +1,27 @@
+<ul class="au-progress-indicator">
+  {{#each items as |item|}}
+    <li>
+      {{#link-to item.route item.step
+        class=(concat 
+          (if (eq item.step activeMenu) "active " "")
+          (concat "au-progress-indicator__link au-progress-indicator__link--" item.status)
+        )
+      }}
+        <span class="au-progress-indicator__status">
+          {{if item.optional "Optional" (humanize item.status)}}
+        </span>
+        {{item.title}}
+      {{/link-to}}
+    </li>
+    {{#if (and item.subItems.length (eq item.step activeMenu))}}
+      {{#each item.subItems as |subItem|}}
+        {{#link-to subItem.route subItem.step class="au-progress-indicator__sub-item"}}
+          <span>
+            {{subItem.title}}
+          </span>
+        {{/link-to}}
+      {{/each}}
+      <hr class="light no-margin">
+    {{/if}}
+  {{/each}}
+</ul>

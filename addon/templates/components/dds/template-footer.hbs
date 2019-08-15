@@ -1,0 +1,74 @@
+<footer
+  class="au-footer au-footer--dark au-body au-body--dark"
+  role="contentinfo"
+>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-sm-12">
+            <h4 class="au-display-lg">About buy.nsw</h4>
+            <br>
+            <div>
+              {{ link-to "About the program" "about-page" }}
+            </div>
+            <!--<div><a href="/performance">Performance Dashboard</a></div>-->
+            <div><a href="https://www.digital.nsw.gov.au/blog" target="_blank">Digital NSW blog</a></div>
+            <div><a href="https://github.com/digitalnsw/buy-nsw" target="_blank">Source Code</a></div>
+            <br>
+            <br>
+          </div>
+          <div class="col-sm-12">
+            <h4 class="au-display-lg">Guidance</h4>
+            <br>
+            <div>{{ link-to "Buyer guide" "buyer-guide" }}</div>
+            <div>{{ link-to "Supplier guide" "seller-guide" }}</div>
+            <div><a href="https://www.procurepoint.nsw.gov.au/" target="_blank">ProcurePoint</a></div>
+            <br>
+            <br>
+          </div>
+          <div class="col-sm-12">
+            <h4 class="au-display-lg">Help</h4>
+            <br>
+            <div>{{ link-to "Contact us" "contact" }}</div>
+            <br>
+          </div>
+        </div>
+      </div>
+      
+      <section class="col-sm-36">
+        <div class="au-footer__end">
+          <nav class="col-sm-33">
+            <ul class="au-link-list au-link-list--inline">
+              <li>{{ link-to "Privacy statement" "privacy" }}</li>
+              <li>{{ link-to "Terms and conditions" "terms-of-use" }}</li>
+              <li>{{ link-to "Accessibility statement" "accessibility" }}</li>
+              <li>{{ link-to "License and attribution" "license" }}</li>
+            </ul>
+            <ul class="au-link-list au-link-list--inline">
+              <li>Built by <a href="https://www.finance.nsw.gov.au/" target="_blank">NSW Department of Finance, Services and Innovation</a></li>
+            </ul>
+          </nav>
+        </div>
+      </section>
+
+      {{#if auth.config.build_version}}
+        <section class="col-sm-36">
+          <div class="au-footer__end">
+            <ul class="au-tags au-tags--dark">
+              <li>
+                <a
+                  target="_blank"
+                  href="https://github.com/digitalnsw/buy-nsw/commits/{{auth.config.build_version}}"
+                >
+                  {{auth.config.environment}} env ({{auth.config.build_version}}, built at {{auth.config.build_time}})
+                </a>
+              </li>
+            </ul>
+          </div>
+        </section>
+      {{/if}}
+
+    </div>
+  </div>
+</footer>

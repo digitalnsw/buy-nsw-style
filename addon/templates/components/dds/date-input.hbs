@@ -1,0 +1,27 @@
+<div>
+  {{input
+    class="au-text-input"
+    value=field
+    type=(if (or (or (or
+          (user-agent "device.isMobile")
+          (user-agent "device.isTablet")
+          (user-agent "browser.isChrome")
+          (user-agent "browser.isFirefox")
+         ))) 'date' 'text')
+    disabled=disabled
+    pattern="\d{4}-\d{1,2}-\d{1,2}"
+    focus-out=(action "focusOut")
+    enter=enter
+    placeholder="YYYY-MM-DD"
+    title=""
+    required=(and (or showError hasChanged) invalid)
+    min=min
+    max=max
+  }}
+</div>
+{{#if (and (or showError hasChanged) invalid)}}
+  {{dds/validation-error type="error" message=errorMessage float="left"}}
+{{else if (and apiError (not hasChanged))}}
+  {{dds/validation-error type="warning" message=apiError float="left"}}
+{{/if}}
+<div class="clear-both"></div>

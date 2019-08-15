@@ -1,0 +1,22 @@
+<section class="au-accordion" id={{id}}>
+  {{#if collapsable}}
+    <a
+      class="au-accordion__title {{expandedClass}}"
+      aria-controls="accordion-default"
+      aria-expanded={{ expanded }}
+      onclick={{action "toggle"}}
+    >
+      {{ title }}
+    </a>
+  {{else}}
+    <span class="au-accordion__title locked">
+      {{ title }}
+    </span>
+  {{/if}}
+
+  <div class="au-accordion__body {{expandedClass}}">
+    <div class="au-accordion__body-wrapper">
+      {{ yield }}
+    </div>
+  </div>
+</section>

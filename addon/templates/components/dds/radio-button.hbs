@@ -1,0 +1,11 @@
+<label class="au-control-input">
+  <input
+    class="au-control-input__input"
+    type="radio"
+    checked={{if (eq field value) "checked" "" }}
+    onClick={{action "selectRadio" value=value}}
+  >
+  <span class="au-control-input__text">
+    {{label}}
+  </span>
+</label>

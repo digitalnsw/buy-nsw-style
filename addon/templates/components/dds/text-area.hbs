@@ -1,0 +1,18 @@
+<label for="textarea">{{label-text}}</label>
+{{textarea
+  class="au-text-input au-text-input--block"
+  focus-out=(action "focusOut")
+  key-up = (action (mut hasChanged) true)
+  value=(mut field)
+  maxlength=maxLength
+}}
+{{#if maxLength}}
+  <p class="gray">
+    {{sub maxLength (if field (get field "length") 0)}} characters remaining
+  </p>
+{{/if}}
+{{#if (and (or showError hasChanged) invalid)}}
+  {{dds/validation-error type="error" message=errorMessage float="left"}}
+{{else if (and apiError (not hasChanged))}}
+  {{dds/validation-error type="warning" message=apiError float="left"}}
+{{/if}}

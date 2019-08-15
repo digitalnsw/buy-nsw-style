@@ -1,0 +1,54 @@
+// Light palette
+// ==============
+
+// Default values - can be overridden with your own colours
+$AU-color-foreground-action:     #002664 !default;
+$AU-color-foreground-focus:      #D7153A !default;
+$AU-color-foreground-text:       #000000 !default;
+$AU-color-background:            #FFFFFF !default;
+
+// Generated values - automatically created from default values
+// $AU-color-foreground-muted     (#626262)
+// $AU-color-foreground-border    (#808080)
+// $AU-color-background-shade     (#f5f5f5)
+// $AU-color-background-alt       (#ebebeb)
+// $AU-color-background-alt-shade (#e0e0e0)
+$AU-colorlight-foreground-border:  #bbb;
+
+$NSW-color-foreground-muted:     #626263;
+$NSW-color-foreground-border:    #808080;
+$NSW-color-background-shade:     #f5f5f5;
+$NSW-color-background-alt:       #ebebeb;
+$NSW-color-background-alt-shade: #e0e0e0;
+
+
+// Dark palette
+// ==============
+
+// Default values - can be overridden with your own colours
+$AU-colordark-foreground-action: #FFFFFF !default;
+$AU-colordark-foreground-focus:  #D7153A !default;
+$AU-colordark-foreground-text:   #FFFFFF !default;
+$AU-colordark-background:        #002664 !default;
+
+$AU-colorblack-background:        #313131 !default;
+
+// Generated values - automatically created from default values
+// $AU-colordark-foreground-muted     (#bdd2d7)
+// $AU-colordark-foreground-border    (#95b7bf)
+// $AU-colordark-background-shade     (#104f5f)
+// $AU-colordark-background-alt       (#0d414d)
+// $AU-colordark-background-alt-shade (#0a323c)
+
+$NSW-colordark-foreground-muted:     #bdd2d7;
+$NSW-colordark-icon-muted:           #018090;
+$NSW-colordark-background-muted:     #f8fafb;
+$NSW-colordark-foreground-border:    #95b7bf;
+$NSW-colordark-background-shade:     #104f5f;
+$NSW-colordark-background-alt:       #0d414d;
+$NSW-colordark-background-alt-shade: #0a323c;
+
+// $AU-color-success: #0cac78 !default;
+// $AU-color-warning: #f69900 !default;
+// $AU-color-info:    #00bfe9 !default;
+// $AU-color-error:   #ff635c !default;

@@ -1,0 +1,14 @@
+{{#if route}}
+  {{link-to label route
+    class=(if wide "au-btn au-btn--primary au-btn--wide" "au-btn au-btn--primary")
+    disabled=disabled
+  }}
+{{else}}
+  <a
+    class={{if wide "au-btn au-btn--wide" "au-btn"}}
+    onclick={{unless disabled onClick}}
+    disabled={{disabled}}
+  >
+    {{label}}
+  </a>
+{{/if}}

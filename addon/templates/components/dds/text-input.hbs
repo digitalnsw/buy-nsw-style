@@ -1,0 +1,40 @@
+<div class="row">
+  {{#unless noLabel}}
+    <div class={{if allRow "col-sm-36 text-input-label" "col-sm-36 col-md-12 text-input-label"}}>
+      <label for="text-input">
+        {{label-text}}
+        {{yield}}
+      </label>
+    </div>
+  {{/unless}}
+  <div class={{if allRow "col-sm-36" "col-sm-36 col-md-24"}}>
+    {{input
+      class=(if wide "au-text-input au-text-input--block" "au-text-input")
+      value=(mut field)
+      type=(if password "password" "text")
+      disabled=disabled
+      pattern=pattern
+      focus-out=(action "focusOut")
+      enter=enter
+      key-up=(action "keyUp")
+      placeholder=placeHolder
+      autocomplete=(if noAutoComplete "new-password" "true")
+      maxlength=maxLength
+    }}
+    {{#if maxLength}}
+      <p class="gray">
+        {{sub maxLength (if field (get field "length") 0)}} characters remaining
+      </p>
+    {{/if}}
+    {{#if (and (or showError hasChanged) (and required (or (eq field "") (eq field null))))}}
+      {{dds/validation-error type="error" message="This field is required" float=(or float "left")}}
+    {{else if (and (not disabled) (and (or showError hasChanged) invalid))}}
+      {{#unless wide}}
+        <br>
+      {{/unless}}
+      {{dds/validation-error type=(or errorType "error") message=errorMessage float=(or float "left")}}
+    {{else if (and apiError (or keepApiError (not hasChanged)))}}
+      {{dds/validation-error type="warning" message=apiError float=(or float "left")}}
+    {{/if}}
+  </div>
+</div>
