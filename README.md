@@ -1,7 +1,7 @@
 buy-nsw-style
 ==============================================================================
 
-[Short description of the addon.]
+This addon includes dds (https://www.digital.nsw.gov.au/digital-design-system/components/ui-pattern-library) stylesheets, with some modifications to make it work on buy.nsw.
 
 
 Compatibility
@@ -23,7 +23,7 @@ ember install buy-nsw-style
 Usage
 ------------------------------------------------------------------------------
 
-[Longer description of how to use the addon in apps.]
+To use this addone, add it to package.json through github ("buy-nsw-style": "git+https://github.com/digitalnsw/buy-nsw-style.git").
 
 
 Contributing
