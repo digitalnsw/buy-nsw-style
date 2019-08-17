@@ -1,0 +1,46 @@
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// Banners are to be used under the header and is a title of the page
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+/**
+ * Basic banner block styling.
+ */
+.au-banner {
+	font-family: MontserratBold;
+	color: white;
+	background-color: $BUY-color-banner-background;
+  margin-bottom: 4rem;
+
+	@include AU-media( sm ) {
+		@include AU-fontgrid( md );
+	}
+
+  @include AU-space( padding, 2unit 0 1unit 0);
+
+	&.au-banner--light {
+    color: black;
+		background-color: $BUY-color-banner-light-left;
+    background-image: linear-gradient(to right, $BUY-color-banner-light-left, $BUY-color-banner-light-right)
+	}
+}
+
+
+/**
+ * Banner heading styles
+ */
+h3.au-banner__heading {
+	@include AU-fontgrid( md );
+	margin: 0;
+	padding: 0 0 1rem;
+  border-bottom: 9px solid $BUY-color-callout-border;
+
+	@include AU-media( sm ) {
+		@include AU-fontgrid( xl );
+	}
+  display: inline-block;
+}
+
+.au-banner__subline {
+	padding: 1rem 0;
+  max-width: $AU-maxwidth;
+}

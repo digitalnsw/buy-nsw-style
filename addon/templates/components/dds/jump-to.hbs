@@ -1,0 +1,27 @@
+<div class="au-jump-to">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xs-14 col-sm-12 col-md-10">
+        <div class="au-jump-to__label">
+          Jump to:
+        </div>
+      </div>
+      <div class="col-xs-22 col-sm-24 col-md-26">
+        <select
+          class="au-select au-select--block au-jump-to__select"
+          onChange={{action "onChange" value="target.value"}}
+        >
+          <option
+            selected="selected"
+            value=""
+          >
+            Please select
+          </option>
+          {{#each sections as |item|}}
+            <option value={{item.anchor}}>{{item.name}}</option>
+          {{/each}}
+        </select>
+      </div>
+    </div>
+  </div>
+</div>

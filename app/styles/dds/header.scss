@@ -44,6 +44,9 @@ $AU-logo-width-sm: 4.3unit !default;
 		color: $AU-colordark-foreground-text;
 		background-color:  $AU-colordark-background-alt;
 	}
+  a.au-btn {
+    font-family: MontserratBold;
+  }
 }
 
 
@@ -52,7 +55,6 @@ $AU-logo-width-sm: 4.3unit !default;
  */
 .au-header__heading {
 	@include AU-fontgrid( md );
-	font-weight: bold;
 	margin: 0;
 	padding: 0;
 
