@@ -11,9 +11,15 @@
 }
 
 b, strong {
-  color: #333;
+  color: $BUY-color-foreground-text;
   font-weight: 400 !important;
   font-family: "MontserratBold";
+  &.dark-sapphire {
+    color: $BUY-color-banner-background;
+  }
+  &.sapphire {
+    color: $BUY-color-action-primary;
+  }
 }
 
 //Main nav, set project specific breakpoint

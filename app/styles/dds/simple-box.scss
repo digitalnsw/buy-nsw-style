@@ -1,0 +1,57 @@
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// simple-box module
+// Use simple-box to box any important information.
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+/**
+ * The generic simple-box.
+ */
+.au-simple-box {
+	@include AU-fontgrid( sm );
+	@include AU-space( padding, 3unit );
+	font-family: $AU-font;
+	word-wrap: break-word;
+  border-radius: $AU-border-radius;
+
+	* + & {
+		@include AU-space( margin-top, 2unit );
+	}
+
+	p {
+		margin: 0;
+	}
+
+	* + p {
+		@include AU-space( margin-top, 1unit );
+	}
+
+	// Visual treatment for paragraphs following simple-box
+	& + p {
+		@include AU-space( margin-top, 2unit );
+	}
+
+	&.au-simple-box--sapphire {
+		color: white;
+    background-image: linear-gradient(to right, $BUY-color-action-light, $BUY-color-action-primary);
+    @include AU-space( padding, 2unit );
+    b, strong {
+      color: white;
+    }
+	}
+
+	&.au-simple-box--ice {
+    color: $BUY-color-foreground-text;
+    border-top: 2rem solid $BUY-color-callout-border;
+    background-image: linear-gradient(to right, $BUY-color-callout-light-back, $BUY-color-callout-background);
+    a {
+      text-decoration: none;
+      margin: 0.7rem;
+    }
+    .svg-inline--fa {
+      color: $BUY-color-callout-border;
+      &:hover {
+        color: $BUY-color-meta-tag;
+      }
+    }
+	}
+}

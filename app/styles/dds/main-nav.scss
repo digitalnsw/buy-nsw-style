@@ -157,6 +157,10 @@ $AU-main-nav-z-index: 200 !default;
 			font-weight: normal;
 		}
 	}
+
+  &.au-main-nav--no-border {
+    border: none;
+  }
 }
 
 
