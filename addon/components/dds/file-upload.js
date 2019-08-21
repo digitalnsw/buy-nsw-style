@@ -55,16 +55,21 @@ export default Component.extend({
     uploadDocument(file) {
       this.set('hasChanged', true);
       let component = this;
-      this.fileService.get('upload').perform(file, function(body){
-        if (component.get('multiple') && component.get('field') == null) {
+      let fileService = this.fileService;
+      let multiple = component.get('multiple');
+      fileService.get('upload').perform(file, function(body){
+        if (multiple && component.get('field') == null) {
           component.set('field', []);
         }
-        if (component.get('multiple')) {
-          component.field.pushObject(body.id);
-        } else {
-          component.set('field', body.id);
-        }
-        component.reloadDocuments();
+        fileService.find(body.id).then((response) =>{
+          if (multiple) {
+            component.field.pushObject(body.id);
+            component.documents.pushObject(response);
+          } else {
+            component.set('field', body.id);
+            component.set('documents', response);
+          }
+        });
         // component.signalBack();
       })
     }
