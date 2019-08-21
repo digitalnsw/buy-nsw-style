@@ -25,7 +25,7 @@ export default Component.extend({
   init() {
     this._super(...arguments);
     let self = this;
-    this.router.on('routeWillChange', (transition) => {
+    this.router.on('routeWillChange', () => {
       if ( !(self.get('isDestroyed') || self.get('isDestroying')) ) {
         self.get('feedbackService').unloadAll();
         self.set('activated', false);

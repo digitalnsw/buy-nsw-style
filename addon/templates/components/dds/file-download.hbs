@@ -1,6 +1,6 @@
 {{#each documents as |doc|}}
   <p>
-    <a target="_blank" class="au-cta-link small" href={{doc.url}}>
+    <a target="_blank" rel="noopener" class="au-cta-link small" href={{doc.url}}>
       {{if showOriginalFilename doc.original_filename "Download file"}}
     </a>
     {{doc.extension}},

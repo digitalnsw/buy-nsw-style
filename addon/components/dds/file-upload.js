@@ -1,6 +1,4 @@
 import Component from '@ember/component';
-import Ember from 'ember';
-import { task } from 'ember-concurrency';
 import { inject } from '@ember/service';
 import layout from '../../templates/components/dds/file-upload';
 
@@ -8,38 +6,26 @@ export default Component.extend({
   layout,
   store: inject(),
   auth: inject(),
-  documents: [],
-  signalBack() {
-    if(this.get('signal') != undefined) {
-      this.incrementProperty('signal');
-    }
-  },
-  reloadDocuments() {
-    console.log('*');
+  didReceiveAttrs() {
+    this._super(...arguments);
+    let component = this;
+    component.set('documents', []);
     if(this.get('multiple')) {
       if(!Array.isArray(this.field)){
         this.set('field', []);
       }
-      let component = this;
-      component.set('documents', []);
       if (this.get('field').length > 0) {
         this.fileService.load(this.get("field")).then((response) => {
           component.set('documents', response.toArray());
         });
       }
     } else {
-      let component = this;
-      component.set('documents', []);
       if (this.get('field')) {
         this.fileService.load([this.get("field")]).then((response) => {
           component.set('documents', response.toArray());
         });
       }
     }
-  },
-  didReceiveAttrs() {
-    this._super(...arguments);
-    this.reloadDocuments();
   },
   actions: {
     removeDocument(index) {

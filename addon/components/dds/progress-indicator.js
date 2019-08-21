@@ -15,7 +15,7 @@ export default Component.extend({
         item.subItems.forEach(function(subItem) {
           if(subItem.step == self.get('stepName')) {
             self.set('activeMenu', item.step);
-          };
+          }
           if(subItem.status == 'doing' || (subItem.status == 'todo' && !subItem.optional)) {
             done = false;
           }

@@ -3,23 +3,23 @@
   <b> Upload a file</b>
 </p>
 <p class="gray">
-The file should be no larger than 5MB and in PDF, PNG or JPEG format. You can upload a single document or separate documents by using the 'Add another file' button below.
+  The file should be no larger than 5MB and in PDF, PNG or JPEG format. You can upload a single document or separate documents by using the 'Add another file' button below.
 </p>
 <p>
   {{#if documents.length}}
     <ul class="au-tags files">
-    {{#each documents as |document index|}}
-      <li class="files">
-        <a class="file">
-          {{document.original_filename}} ( {{document.extension}} , {{number-to-human-size document.size}} )
-        </a>
-        {{#unless disabled}}
-          <a class="pointer right" onclick={{action "removeDocument" index}}>
-            x
+      {{#each documents as |document index|}}
+        <li class="files">
+          <a class="file">
+            {{document.original_filename}} ( {{document.extension}} , {{number-to-human-size document.size}} )
           </a>
-        {{/unless}}
-      </li>
-    {{/each}}
+          {{#unless disabled}}
+            <a class="pointer right" onclick={{action "removeDocument" index}}>
+              x
+            </a>
+          {{/unless}}
+        </li>
+      {{/each}}
     </ul>
   {{else}}
     No file selected
@@ -27,9 +27,9 @@ The file should be no larger than 5MB and in PDF, PNG or JPEG format. You can up
   <br>
   {{#unless disabled}}
     {{#file-upload name=name
-                   accept=(if fileTypes fileTypes (array 'image/jpeg' 'image/png' 'application/pdf'))
+                   accept=(if fileTypes fileTypes (array "image/jpeg" "image/png" "application/pdf"))
                    multiple=multiple
-                   onfileadd=(action "uploadDocument") as |queue|}}
+                   onfileadd=(action "uploadDocument")}}
       <a class="au-btn au-btn--tertiary">
         {{#if documents.length}}
           Add another file

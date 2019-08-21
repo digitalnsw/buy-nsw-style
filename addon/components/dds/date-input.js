@@ -1,7 +1,5 @@
 import Component from '@ember/component';
 import layout from '../../templates/components/dds/date-input';
-import { computed } from '@ember/object';
-import moment from 'moment';
 
 export default Component.extend({
   layout,
