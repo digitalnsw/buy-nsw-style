@@ -19,6 +19,20 @@
   }
 }
 
+ul.au-tags.files {
+  padding-right: 1rem;
+  li.files {
+    width: 100%;
+    a.file {
+      text-decoration: none;
+    }
+    a.right {
+      float: right;
+      text-decoration: none;
+    }
+  }
+}
+
 .au-tags {
 	@include AU-fontgrid( sm );
 	display: block;

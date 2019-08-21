@@ -1,0 +1,94 @@
+hr.less-margin {
+  margin: 1.0rem 0 1.0rem 0;
+}
+hr.no-margin {
+  margin: 0;
+}
+a.pointer {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+div.feedback {
+  padding-bottom: 1.5rem;
+}
+
+span.pull-left {
+  padding: 0 0.5rem;
+  float: left;
+}
+
+a.pull-right, span.pull-right, div.pull-right {
+  padding: 0 0.5rem;
+  float: right;
+}
+
+div.float-right, span.float-right, a.float-right, b.float-right, p.float-right {
+  padding-right: 1rem;
+  float: none;
+  @include AU-media( sm ) {
+    float: right;
+  }
+}
+
+div.align-right, span.align-right, a.align-right, b.align-right, p.align-right {
+  text-align: left;
+  @include AU-media( sm ) {
+    text-align: right;
+  }
+}
+
+span.float-left, a.float-left, b.float-left {
+  float: left;
+}
+
+.green {
+  color: $AU-color-success;
+}
+
+.gray {
+  color: #888;
+}
+
+p.gray {
+  color: gray;
+  font-size: 80%;
+}
+
+div.center {
+  text-align: center;
+}
+
+.inline {
+  display: inline-block;
+}
+
+.center {
+  text-align: center;
+}
+
+hr.light {
+  border-top: 1px solid #E0E0E0;
+}
+
+.text-input-label {
+  margin-top: 0.6rem;
+}
+
+p.thin-lines {
+  line-height: 0.5;
+}
+
+a.au-btn.no-padding, div.no-padding {
+  padding: 0;
+}
+div.little-padding {
+  padding: 0.3rem;
+}
+a.au-btn.right-link {
+  float: right;
+  margin: 0.8rem;
+  font-size: 0.8rem;
+  padding: 0.4rem 1.2rem;
+  text-decoration: none;
+}

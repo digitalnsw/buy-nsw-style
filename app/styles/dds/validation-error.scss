@@ -1,0 +1,26 @@
+span.field-error {
+  padding-top: 1rem;
+  border-bottom: 4px solid white;
+  float: left;
+  @include AU-media( sm ) {
+    &:not(.float-left) {
+      float: right;
+    }
+  }
+  &.short,&.error {
+    color: $AU-color-error;
+    border-color: $AU-color-error;
+  }
+  &.weak,&.warning {
+    color: $AU-color-warning;
+    border-color: $AU-color-warning;
+  }
+  &.strong,&.green {
+    color: $AU-color-success;
+    border-color: $AU-color-success;
+  }
+  &.blank,&.gray {
+    color: gray;
+    border-color: gray;
+  }
+}

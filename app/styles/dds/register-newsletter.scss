@@ -1,0 +1,43 @@
+footer.au-footer--black {
+  input.au-text-input--dark {
+    background-color: $AU-colorblack-background;
+    color: white;
+    border: none;
+    border-bottom: 1px solid #777;
+    &:-webkit-autofill {
+      -webkit-text-fill-color: white !important;
+      -webkit-box-shadow: 0 0 0px 1000px $AU-colorblack-background inset;
+    }
+  }
+  input.au-text-input--dark:invalid {
+    background-color: $AU-colorblack-background;
+  }
+}
+
+label.au-control-input--black {
+  margin-left: 1rem;
+  width: 7rem;
+  background-color: $AU-colorblack-background;
+  input.au-control-input__input {
+    color: white;
+    background-color: $AU-colorblack-background;
+    &:invalid {
+      background-color: $AU-colorblack-background;
+    }
+  }
+  span.au-control-input__text {
+    color: white;
+    background-color: $AU-colorblack-background;
+  }
+  input.au-control-input__input:invalid + span.au-control-input__text {
+    background-color: $AU-colorblack-background;
+  }
+}
+
+.au-body.au-body--black ::selection {
+  background-color: $AU-colorblack-background;
+}
+
+b.strong--black {
+  color: white;
+}
