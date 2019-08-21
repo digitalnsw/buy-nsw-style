@@ -23,7 +23,6 @@
   "dependencies": {
     "ember-cli-babel": "^7.7.3",
     "ember-cli-htmlbars": "^3.0.1",
-    "ember-youtube": "^0.9.7",
     "ember-power-select": "^3.0.3"
   },
   "devDependencies": {
