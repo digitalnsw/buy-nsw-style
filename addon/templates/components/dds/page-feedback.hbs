@@ -40,7 +40,7 @@
           {{dds/secondary-button
             wide=true
             onClick=(action "sendFeedback")
-            disabled=(v-get this "isInvalid")
+            disabled=feedback.isInvalid
             label="Send feedback"
           }}
         </span>
