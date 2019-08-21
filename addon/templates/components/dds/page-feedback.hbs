@@ -1,0 +1,64 @@
+<div class="container-fluid">
+  <div class="row feedback">
+    <hr class="less-margin">
+    <div class="col-sm-36 col-md-3 col-lg-6">
+    </div>
+    <div class="col-sm-36 col-md-30 col-lg-24">
+      {{#if activated}}
+        <br>
+        <h2 class="au-header__heading au-display-md">
+          Help us improve buy.nsw
+          <a class="pull-right pointer" onclick={{action "cancelFeedback"}}>
+            {{fa-icon "times" prefix="fal"}}
+          </a>
+        </h2>
+        <br>
+        <p>
+          {{#dds/text-input
+            wide=true
+            field=(mut feedback.task)
+          }}
+            What were you doing?
+          {{/dds/text-input}}
+        </p>
+
+        <p>
+          {{#dds/text-input
+            wide=true
+            field=(mut feedback.issue)
+          }}
+            What went wrong?
+          {{/dds/text-input}}
+        </p>
+
+        {{#if user}}
+          <p>Your email ({{user.email}}) will be included in the report.</p>
+        {{/if}}
+
+        <br>
+        <span class="float-right">
+          {{dds/secondary-button
+            wide=true
+            onClick=(action "sendFeedback")
+            disabled=(v-get this "isInvalid")
+            label="Send feedback"
+          }}
+        </span>
+      {{/if}}
+    </div>
+    <div class="col-sm-36">
+      {{#unless activated}}
+        {{#if feedback}}
+          <b>Thank you for your feedback.</b>
+        {{else}}
+          <button 
+            class="au-btn au-btn--tertiary"
+            onClick={{action "initiateFeedback"}}
+          >
+            Is there anything wrong with this page?
+          </button>
+        {{/if}}
+      {{/unless}}
+    </div>
+  </div>
+</div>
