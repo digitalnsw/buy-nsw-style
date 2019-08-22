@@ -1,4 +1,5 @@
 import Component from '@ember/component';
+import { computed } from '@ember/object';
 import { inject } from '@ember/service';
 import layout from '../../templates/components/dds/file-upload';
 
@@ -6,24 +7,54 @@ export default Component.extend({
   layout,
   store: inject(),
   auth: inject(),
-  didReceiveAttrs() {
-    this._super(...arguments);
-    let component = this;
-    component.set('documents', []);
-    if(this.get('multiple')) {
-      if(!Array.isArray(this.field)){
-        this.set('field', []);
-      }
-      if (this.get('field').length > 0) {
-        this.fileService.load(this.get("field")).then((response) => {
-          component.set('documents', response.toArray());
-        });
+  documents: null,
+  fieldAndDocumentsMatch: computed('multiple', 'field', 'documents', function() {
+    if(this.get('documents') == null) {
+      return false;
+    }
+    let ids = this.get('field');
+    if (this.get('multiple')) {
+      if ( ids == null ) {
+        ids = [];
       }
     } else {
-      if (this.get('field')) {
-        this.fileService.load([this.get("field")]).then((response) => {
-          component.set('documents', response.toArray());
-        });
+      if (ids == null) {
+        ids = [];
+      } else {
+        ids = [ids];
+      }
+    }
+    let docIds = this.get('documents').map(doc => doc.id);
+    if (ids.length != docIds.length) {
+      return false;
+    }
+    for(let i = 0 ; i < ids.length ; i++) {
+      if (ids[i] != docIds[i]) {
+        return false;
+      }
+    }
+    return true;
+  }),
+  didReceiveAttrs() {
+    this._super(...arguments);
+    if (!this.get('fieldAndDocumentsMatch')) {
+      if(this.get('multiple') && !Array.isArray(this.field)){
+        this.set('field', []);
+      }
+      let component = this;
+      component.set('documents', []);
+      if(this.get('multiple')) {
+        if (this.get('field').length > 0) {
+          this.fileService.load(this.get("field")).then((response) => {
+            component.set('documents', response.toArray());
+          });
+        }
+      } else {
+        if (this.get('field')) {
+          this.fileService.load([this.get("field")]).then((response) => {
+            component.set('documents', response.toArray());
+          });
+        }
       }
     }
   },
@@ -36,7 +67,7 @@ export default Component.extend({
         this.set('field', null);
       }
       this.documents.removeAt(index);
-      // this.signalBack();
+      this.signalBack();
     },
     uploadDocument(file) {
       this.set('hasChanged', true);
@@ -53,10 +84,10 @@ export default Component.extend({
             component.documents.pushObject(response);
           } else {
             component.set('field', body.id);
-            component.set('documents', response);
+            component.set('documents', [ response ]);
           }
         });
-        // component.signalBack();
+        component.signalBack();
       })
     }
   }

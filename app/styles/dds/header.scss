@@ -169,3 +169,10 @@ a.au-header__brand {
 		@include AU-space( margin-top, 0.75unit );
 	}
 }
+a.au-btn.right-link {
+  float: right;
+  margin: 0.8rem;
+  font-size: 0.8rem;
+  padding: 0.4rem 1.2rem;
+  text-decoration: none;
+}
