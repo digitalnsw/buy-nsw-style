@@ -37,10 +37,10 @@ export default Component.extend({
   }),
   didReceiveAttrs() {
     this._super(...arguments);
+    if(this.get('multiple') && !Array.isArray(this.field)){
+      this.set('field', []);
+    }
     if (!this.get('fieldAndDocumentsMatch')) {
-      if(this.get('multiple') && !Array.isArray(this.field)){
-        this.set('field', []);
-      }
       let component = this;
       component.set('documents', []);
       if(this.get('multiple')) {
@@ -74,9 +74,6 @@ export default Component.extend({
       let fileService = this.fileService;
       let multiple = component.get('multiple');
       fileService.get('upload').perform(file, function(body){
-        if (multiple && component.get('field') == null) {
-          component.set('field', []);
-        }
         fileService.find(body.id).then((response) =>{
           if (multiple) {
             component.field.pushObject(body.id);
