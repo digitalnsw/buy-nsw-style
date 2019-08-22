@@ -67,7 +67,6 @@ export default Component.extend({
         this.set('field', null);
       }
       this.documents.removeAt(index);
-      this.signalBack();
     },
     uploadDocument(file) {
       this.set('hasChanged', true);
@@ -87,7 +86,6 @@ export default Component.extend({
             component.set('documents', [ response ]);
           }
         });
-        component.signalBack();
       })
     }
   }
