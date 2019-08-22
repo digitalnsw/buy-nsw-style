@@ -4,7 +4,7 @@
 >
   <option
     disabled
-    selected={{if (or (eq field "") (eq field null)) "selected"}}
+    selected={{if (is-empty field) "selected"}}
   >
     Please select
   </option>
@@ -12,7 +12,7 @@
     <option selected={{if (eq field item.value) "selected"}} value={{item.value}}>{{item.label}}</option>
   {{/each}}
 </select>
-{{#if (and (or showError hasChanged) (and required (or (eq field "") (eq field null))))}}
+{{#if (and (or showError hasChanged) (and required (is-empty field) ))}}
   {{dds/validation-error type="error" message="This field is required" float="left"}}
 {{else if (and (or showError hasChanged) invalid)}}
   {{dds/validation-error type="error" message=errorMessage float="left"}}

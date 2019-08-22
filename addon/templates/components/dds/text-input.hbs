@@ -26,7 +26,7 @@
         {{sub maxLength (if field (get field "length") 0)}} characters remaining
       </p>
     {{/if}}
-    {{#if (and (or showError hasChanged) (and required (or (eq field "") (eq field null))))}}
+    {{#if (and (or showError hasChanged) (and required (is-empty field)))}}
       {{dds/validation-error type="error" message="This field is required" float=(or float "left")}}
     {{else if (and (not disabled) (and (or showError hasChanged) invalid))}}
       {{#unless wide}}
