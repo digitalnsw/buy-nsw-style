@@ -14,6 +14,9 @@ b, strong {
   color: $BUY-color-foreground-text;
   font-weight: 400 !important;
   font-family: "MontserratBold";
+  &.white {
+    color: white;
+  }
   &.dark-sapphire {
     color: $BUY-color-banner-background;
   }

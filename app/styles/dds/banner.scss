@@ -9,7 +9,7 @@
 	font-family: MontserratBold;
 	color: white;
 	background-color: $BUY-color-banner-background;
-  margin-bottom: 4rem;
+  margin-bottom: 3rem;
 
 	@include AU-media( sm ) {
 		@include AU-fontgrid( md );

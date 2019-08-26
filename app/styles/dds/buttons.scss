@@ -75,6 +75,17 @@ a.au-btn {
     min-width: 12em;
   }
 
+  &.au-btn--sapphire {
+    background-color: $BUY-color-action-alt-shade;
+    border-color: $BUY-color-action-alt-shade;
+
+    // hover
+    &:hover:not(:disabled) {
+      background-color: $BUY-color-action-alt;
+      border-color: $BUY-color-action-alt;
+    }
+  }
+
 	// dark
 	&.au-btn--dark {
 		color: $AU-colordark-background;
@@ -99,7 +110,6 @@ a.au-btn {
 
 		@include AU-focus( 'dark' );
 	}
-
 
 	/**
 	* SECONDARY
