@@ -12,7 +12,7 @@ export default Component.extend({
     }
 
     if (ids.length > 0) {
-      return this.fileService.load(ids);
+      return this.fileService.loadDocument(ids);
     } else {
       return [];
     }

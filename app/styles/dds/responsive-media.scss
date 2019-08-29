@@ -58,10 +58,17 @@
 }
 
 //-----------------------------------------
-img.avatar {
-  border-radius: 100rem;
+img.avatar, svg.avatar {
+  color: $BUY-color-action-primary;
+  border-radius: 50%;
   margin: 1rem;
   width: 80%;
   max-width: 9rem;
+}
+.cropped-avatar {
+  canvas {
+    border-radius: 50%;
+    max-width: 100%;
+  }
 }
 //-----------------------------------------

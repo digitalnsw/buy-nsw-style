@@ -71,9 +71,9 @@ export default Component.extend({
     uploadDocument(file) {
       this.set('hasChanged', true);
       let component = this;
-      let fileService = this.fileService;
+      let fileService = this.get('fileService');
       let multiple = component.get('multiple');
-      fileService.get('upload').perform(file, function(body){
+      fileService.get('uploadDocument').perform(file, function(body){
         fileService.find(body.id).then((response) =>{
           if (multiple) {
             component.field.pushObject(body.id);
