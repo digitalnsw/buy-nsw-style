@@ -45,13 +45,13 @@ export default Component.extend({
       component.set('documents', []);
       if(this.get('multiple')) {
         if (this.get('field').length > 0) {
-          this.fileService.load(this.get("field")).then((response) => {
+          this.fileService.loadDocument(this.get("field")).then((response) => {
             component.set('documents', response.toArray());
           });
         }
       } else {
         if (this.get('field')) {
-          this.fileService.load([this.get("field")]).then((response) => {
+          this.fileService.loadDocument([this.get("field")]).then((response) => {
             component.set('documents', response.toArray());
           });
         }
