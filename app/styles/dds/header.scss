@@ -45,8 +45,8 @@ $AU-logo-width-sm: 4.3unit !default;
 		background-color:  $AU-colordark-background-alt;
 	}
   a.au-btn {
-    font-family: MontserratBold;
     margin: 1.6rem 0.8rem 0;
+    border-width: 1px;
   }
 }
 
@@ -171,7 +171,7 @@ a.au-header__brand {
 }
 a.au-btn.right-link {
   float: right;
-  margin: 0.8rem;
+  margin: 1.6rem 0.8rem 0 0;
   font-size: 0.8rem;
   padding: 0.4rem 1.2rem;
   text-decoration: none;

@@ -22,17 +22,32 @@
 		background-color: $BUY-color-banner-light-left;
     background-image: linear-gradient(to right, $BUY-color-banner-light-left, $BUY-color-banner-light-right)
 	}
+
+  .banner-button {
+    font-family: MontserratBold;
+    text-align: center;
+    margin-right: 1rem;
+    width: 13rem;
+    max-width: 37%;
+    padding: 0.5rem;
+    box-shadow: 5px 5px 5px gray;
+    &:active {
+      border-radius: 1rem;
+    }
+    border-radius: 1rem;
+  }
 }
 
 
 /**
  * Banner heading styles
  */
-h3.au-banner__heading {
+h3.au-banner__title {
 	@include AU-fontgrid( md );
 	margin: 0;
 	padding: 0 0 1rem;
   border-bottom: 9px solid $BUY-color-callout-border;
+  font-family: MontserratBold;
 
 	@include AU-media( sm ) {
 		@include AU-fontgrid( xl );
@@ -40,7 +55,23 @@ h3.au-banner__heading {
   display: inline-block;
 }
 
+h4.au-banner__heading {
+	padding: 0;
+	@include AU-fontgrid( sm );
+  font-family: MontserratBold;
+
+	@include AU-media( sm ) {
+		@include AU-fontgrid( lg );
+	}
+  display: inline-block;
+}
+
 .au-banner__subline {
 	padding: 1rem 0;
   max-width: $AU-maxwidth;
+  font-family: MontserratRegular;
+	@include AU-fontgrid( xs );
+	@include AU-media( sm ) {
+		@include AU-fontgrid( sm );
+	}
 }

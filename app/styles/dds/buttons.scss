@@ -86,6 +86,19 @@ a.au-btn {
     }
   }
 
+  &.au-btn--turquoise {
+    color: $BUY-color-banner-background;
+    background-color: $BUY-color-action-turquoise;
+    border-color: $BUY-color-action-turquoise;
+
+    // hover
+    &:hover:not(:disabled) {
+      color: $BUY-color-banner-background;
+      background-color: $BUY-color-action-turquoise-alt;
+      border-color: $BUY-color-action-turquoise-alt;
+    }
+  }
+
 	// dark
 	&.au-btn--dark {
 		color: $AU-colordark-background;
