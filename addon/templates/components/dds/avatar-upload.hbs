@@ -1,0 +1,41 @@
+<div class="row">
+  {{#if imgSrc}}
+    <div class="col-xs-12">
+      <div class="cropper-container">
+        <img src={{ imgSrc }}>
+      </div>
+    </div>
+    <div class="col-xs-12">
+      <div class="cropped-avatar" style="border-radius: 50%">
+        {{croppedAvatar}}
+        {{image-cropper
+          cropper=cropper
+          aspectRatio=1
+          minCropBoxWidth=100
+          minCropBoxHeight=100
+        }}
+      </div>
+    </div>
+  {{else}}
+    <div class="col-xs-24">
+      {{dds/avatar avatarId=field fileService=fileService}}
+    </div>
+  {{/if}}
+  <div class="col-xs-12">
+    {{#file-upload name="avatar-file" accept=(array "image/jpeg" "image/png") onfileadd=(action "filePicked")}}
+      <a class="au-btn au-btn--tertiary pointer">
+        Pick a file
+      </a>
+    {{/file-upload}}
+    {{#if imgSrc}}
+      {{dds/tertiary-button
+        onClick=(action "crop")
+        label="Crop"}}
+    {{/if}}
+    {{#if cropBlob}}
+      {{dds/tertiary-button
+        onClick=(action "upload")
+        label="Upload"}}
+    {{/if}}
+  </div>
+</div>

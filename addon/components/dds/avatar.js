@@ -4,13 +4,14 @@ import layout from '../../templates/components/dds/avatar';
 
 export default Component.extend({
   layout,
-  images: computed('avatarId', function() {
-    let id = this.get('avatarId');
+  image: computed('avatarId', function() {
 
-    if (id) {
-      return this.fileService.load([id]);
+    let avatarId = this.get('avatarId');
+
+    if (avatarId) {
+      return this.fileService.loadAvatar(avatarId);
     } else {
-      return [];
+      return null;
     }
   }),
 });
