@@ -12,6 +12,7 @@
 	font-family: $AU-font;
 	word-wrap: break-word;
   border-radius: $AU-border-radius;
+  box-shadow: 0px 0px 10px lightgrey;
 
 	* + & {
 		@include AU-space( margin-top, 2unit );
@@ -32,14 +33,15 @@
 
 	&.au-simple-box--sapphire {
 		color: white;
-    background-image: linear-gradient(to right, $BUY-color-action-light, $BUY-color-action-primary);
+    background-color: $BUY-color-action-light;
+    // background-image: linear-gradient(to right, $BUY-color-action-light, $BUY-color-action-primary);
     @include AU-space( padding, 2unit );
     b, strong {
       color: white;
     }
 	}
 
-	&.au-simple-box--ice {
+	&.au-simple-box--turquoise {
     color: $BUY-color-foreground-text;
     border-top: 2rem solid $BUY-color-callout-border;
     background-image: linear-gradient(to right, $BUY-color-callout-light-back, $BUY-color-callout-background);
@@ -54,4 +56,36 @@
       }
     }
 	}
+}
+div.cool-infobox {
+  border-radius: 10px;
+  padding: 1.0rem;
+  margin: 2rem 0;
+  border: solid 0.5px $NSW-colordark-foreground-border;
+  background-color: $NSW-colordark-background-muted;
+  .svg-inline--fa {
+    color: $NSW-colordark-icon-muted;
+    margin: 12px 8px 10px 16px;
+  }
+  &.turquoise {
+    margin: 1rem 0 2rem 0;
+    border: none;
+    background-color: $BUY-color-callout-background;
+    box-shadow: 5px 5px 10px lightgrey;
+  }
+  &.sapphire {
+    margin: 1rem 0 2rem 0;
+    border: none;
+    background-color: $BUY-color-sapphire-light;
+    box-shadow: 5px 5px 10px lightgrey;
+    .svg-inline--fa {
+      color: $BUY-color-action-alt-shade;
+    }
+  }
+  > span {
+    padding: 1.0rem 0.5rem;
+    float: left;
+    width: calc(100% - 90px);
+    text-align: center;
+  }
 }

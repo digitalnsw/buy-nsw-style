@@ -1,8 +1,11 @@
-<div class={{if light "au-banner au-banner--light" "au-banner"}}>
+<div class="au-banner {{if light "au-banner--light"}} {{background}}">
   <div class="container-fluid">
     <div class="row">
       <div class="col-sm-36">
         <div class="au-banner__text">
+          {{#if links}}
+            {{dds/bread-crumbs links=links}}
+          {{/if}}
           <h3 class="au-banner__title">{{title}}</h3>
           {{#if heading}}
             <br>

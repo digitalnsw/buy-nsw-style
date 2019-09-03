@@ -8,6 +8,10 @@
 .au-banner {
 	font-family: MontserratBold;
 	color: white;
+  a {
+    color: white;
+    text-decoration: none;
+  }
 	background-color: $BUY-color-banner-background;
   margin-bottom: 3rem;
 
@@ -16,12 +20,6 @@
 	}
 
   @include AU-space( padding, 2unit 0 1unit 0);
-
-	&.au-banner--light {
-    color: black;
-		background-color: $BUY-color-banner-light-left;
-    background-image: linear-gradient(to right, $BUY-color-banner-light-left, $BUY-color-banner-light-right)
-	}
 
   .banner-button {
     font-family: MontserratBold;
@@ -36,42 +34,69 @@
     }
     border-radius: 1rem;
   }
-}
 
+  .au-breadcrumbs {
+    margin-bottom: 2rem;
+  }
 
-/**
- * Banner heading styles
- */
-h3.au-banner__title {
-	@include AU-fontgrid( md );
-	margin: 0;
-	padding: 0 0 1rem;
-  border-bottom: 9px solid $BUY-color-callout-border;
-  font-family: MontserratBold;
+  /**
+   * Banner heading styles
+   */
+  .au-banner__title {
+    @include AU-fontgrid( lg );
+    margin: 0;
+    padding: 0 0 1rem;
+    border-bottom: 9px solid $BUY-color-callout-border;
+    font-family: MontserratRegular;
 
-	@include AU-media( sm ) {
-		@include AU-fontgrid( xl );
+    @include AU-media( sm ) {
+      @include AU-fontgrid( xxl );
+    }
+    display: inline-block;
+  }
+
+  .au-banner__heading {
+    padding: 0;
+    margin: 1rem 0;
+    @include AU-fontgrid( sm );
+    font-family: MontserratBold;
+
+    @include AU-media( sm ) {
+      @include AU-fontgrid( lg );
+    }
+    display: inline-block;
+  }
+
+  .au-banner__subline {
+    padding: 1rem 0 0.5rem;
+    max-width: $AU-maxwidth;
+    font-family: MontserratRegular;
+    @include AU-fontgrid( xs );
+    @include AU-media( sm ) {
+      @include AU-fontgrid( sm );
+    }
+  }
+
+	&.au-banner--light {
+    color: $BUY-color-foreground-text;
+    .au-banner__heading {
+      color: $BUY-color-banner-background;
+    }
+		background-color: $BUY-color-banner-light-left;
+    background-image: linear-gradient(to right, $BUY-color-banner-light-left, $BUY-color-banner-light-right);
+    a {
+      color: $BUY-color-foreground-text;
+    }
+    .au-banner__heading {
+    }
 	}
-  display: inline-block;
-}
 
-h4.au-banner__heading {
-	padding: 0;
-	@include AU-fontgrid( sm );
-  font-family: MontserratBold;
-
-	@include AU-media( sm ) {
-		@include AU-fontgrid( lg );
-	}
-  display: inline-block;
-}
-
-.au-banner__subline {
-	padding: 1rem 0;
-  max-width: $AU-maxwidth;
-  font-family: MontserratRegular;
-	@include AU-fontgrid( xs );
-	@include AU-media( sm ) {
-		@include AU-fontgrid( sm );
-	}
+  &.editting {
+    @include AU-media( sm ) {
+      background-image: url("/ict/buy-nsw-style/images/editting-header.png");
+      background-repeat: no-repeat;
+      background-position: 90%;
+      background-size: contain;
+    }
+  }
 }

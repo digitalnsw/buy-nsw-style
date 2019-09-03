@@ -76,6 +76,7 @@ a.au-btn {
   }
 
   &.au-btn--sapphire {
+    color: white;
     background-color: $BUY-color-action-alt-shade;
     border-color: $BUY-color-action-alt-shade;
 
@@ -87,7 +88,7 @@ a.au-btn {
   }
 
   &.au-btn--turquoise {
-    color: $BUY-color-banner-background;
+    color: $BUY-color-foreground-text;
     background-color: $BUY-color-action-turquoise;
     border-color: $BUY-color-action-turquoise;
 
