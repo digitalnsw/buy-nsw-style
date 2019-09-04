@@ -1,15 +1,17 @@
 {
-  "name": "buy-nsw-style",
-  "version": "0.0.0",
+  "name": "@digitalnsw/buy-nsw-style",
+  "version": "0.0.1",
   "description": "The default blueprint for ember-cli addons.",
   "keywords": [
     "ember-addon"
   ],
-  "repository": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/digitalnsw/buy-nsw-style.git"
+  },
   "license": "MIT",
-  "author": "",
+  "author": "Arman Sarrafi",
   "directories": {
-    "doc": "doc",
     "test": "tests"
   },
   "scripts": {
@@ -42,7 +44,7 @@
     "ember-maybe-import-regenerator": "^0.1.6",
     "ember-qunit": "^4.4.1",
     "ember-resolver": "^5.0.1",
-    "ember-scroll-to-target": "armansa/ember-scroll-to-target",
+    "ember-scroll-to-target": "github:armansa/ember-scroll-to-target",
     "ember-source": "~3.11.1",
     "ember-source-channel-url": "^1.1.0",
     "ember-try": "^1.0.0",
@@ -56,5 +58,10 @@
   },
   "ember-addon": {
     "configPath": "tests/dummy/config"
-  }
+  },
+  "main": "index.js",
+  "bugs": {
+    "url": "https://github.com/digitalnsw/buy-nsw-style/issues"
+  },
+  "homepage": "https://github.com/digitalnsw/buy-nsw-style#readme"
 }
