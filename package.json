@@ -1,7 +1,7 @@
 {
   "name": "@digitalnsw/buy-nsw-style",
   "version": "0.0.1",
-  "description": "The default blueprint for ember-cli addons.",
+  "description": "BUY.NSW design system as ember components.",
   "keywords": [
     "ember-addon"
   ],
