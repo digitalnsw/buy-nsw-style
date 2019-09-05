@@ -37,6 +37,31 @@
 		border-color: $AU-color-error;
 	}
 
+  &.au-text-input--thin {
+    @include AU-space( height, 2unit );
+    border-radius: 5px;
+    font-size: 80%;
+    border: 1px solid gray;
+    &:focus{
+      border-radius: 5px;
+      border: 2px solid gray;
+    }
+  }
+
+  &.au-text-input--turquoise {
+    border-color: $BUY-color-callout-border;
+    &:focus{
+      border-color: $BUY-color-callout-border;
+    }
+  }
+
+  &.au-text-input--sapphire {
+    border-color: $BUY-color-action-alt-shade;
+    &:focus{
+      border-color: $BUY-color-action-alt-shade;
+    }
+  }
+
 	// valid styling
 
 	// disabled :valid pseudo class because all fields would become valid and green too quickly. In the future :valid should be the default styling(not green)
@@ -153,7 +178,7 @@ textarea.au-text-input {
 	@include AU-fontgrid( sm );
 	height: auto;
 	max-width: 100%;
-	min-height: 6em;
+	min-height: 10em;
   resize: vertical;
 }
 input[type=date]::-webkit-calendar-picker-indicator,

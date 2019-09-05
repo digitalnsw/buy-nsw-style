@@ -75,15 +75,21 @@ a.au-btn {
     min-width: 12em;
   }
 
+  &.au-btn--thin {
+    @include AU-space( padding, 0.15unit 1.5unit );
+  }
+
   &.au-btn--sapphire {
     color: white;
     background-color: $BUY-color-action-alt-shade;
     border-color: $BUY-color-action-alt-shade;
+    text-decoration: none;
 
     // hover
     &:hover:not(:disabled) {
       background-color: $BUY-color-action-alt;
       border-color: $BUY-color-action-alt;
+      text-decoration: none;
     }
   }
 
@@ -91,12 +97,14 @@ a.au-btn {
     color: $BUY-color-foreground-text;
     background-color: $BUY-color-action-turquoise;
     border-color: $BUY-color-action-turquoise;
+    text-decoration: none;
 
     // hover
     &:hover:not(:disabled) {
-      color: $BUY-color-banner-background;
+      color: $BUY-color-foreground-text;
       background-color: $BUY-color-action-turquoise-alt;
       border-color: $BUY-color-action-turquoise-alt;
+      text-decoration: none;
     }
   }
 

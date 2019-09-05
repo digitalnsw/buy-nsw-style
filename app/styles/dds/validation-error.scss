@@ -23,4 +23,9 @@ span.field-error {
     color: gray;
     border-color: gray;
   }
+  &.thin {
+    font-size: 80%;
+    padding-top: 0.5rem;
+    border-bottom: 2px solid $AU-color-error;
+  }
 }
