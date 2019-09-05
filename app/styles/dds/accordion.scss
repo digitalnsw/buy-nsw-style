@@ -26,6 +26,21 @@
 			background-color: $AU-colordark-background-shade;
 		}
 	}
+
+  &.au-accordion--sapphire {
+    background-color: $BUY-color-ui-background;
+    border: none;
+    box-shadow: 0px 0px 10px lightgrey;
+    padding: 1rem 2rem;
+    border-radius: 1rem;
+    margin: 2rem 0;
+
+    .au-accordion__title {
+      font-family: MontserratBold;
+      color: $BUY-color-banner-background;
+      background-color: $BUY-color-ui-background;
+    }
+  }
 }
 
 .au-accordion + .au-accordion {
@@ -165,6 +180,11 @@
 	.au-accordion--dark & {
 		border-top: 1px solid $AU-colordark-foreground-border;
 	}
+
+  &.au-accordion--sapphire {
+    border-top: none;
+    background-color: $BUY-color-ui-background;
+  }
 }
 
 .au-accordion-group {

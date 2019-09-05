@@ -1,4 +1,4 @@
-<section class="au-accordion" id={{id}}>
+<section class="au-accordion {{if theme (concat "au-accordion--" theme)}}" id={{id}}>
   {{#if collapsable}}
     <a
       class="au-accordion__title {{expandedClass}}"
@@ -15,7 +15,7 @@
   {{/if}}
 
   <div class="au-accordion__body {{expandedClass}}">
-    <div class="au-accordion__body-wrapper">
+    <div class="au-accordion__body-wrapper {{if theme (concat "au-accordion--" theme)}}">
       {{ yield }}
     </div>
   </div>
