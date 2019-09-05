@@ -27,3 +27,6 @@
 # vim backup files
 **/.*.swp
 **/.*.swo
+
+# mac files
+**/.DS_Store
