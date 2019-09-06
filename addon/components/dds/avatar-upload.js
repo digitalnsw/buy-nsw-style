@@ -5,8 +5,6 @@ import layout from '../../templates/components/dds/avatar-upload';
 export default Component.extend({
   layout,
   croppedAvatar: null,
-  container: "cropper-container",
-  counter: 0,
 
   toBlob(canvas, then) {
     if(canvas.toBlob) {
@@ -36,6 +34,9 @@ export default Component.extend({
           component.set('imgSrc', null);
           component.set('croppedAvatar', null);
           component.set('cropBlob', null);
+          if(component.get('signal') != undefined) {
+            component.incrementProperty('signal');
+          }
         }
       );
     },
@@ -46,6 +47,11 @@ export default Component.extend({
       this.toBlob(croppedImage, function (blob) {
         component.set('cropBlob', blob);
       });
+    },
+    cancel() {
+      this.set('imgSrc', null);
+      this.set('croppedAvatar', null);
+      this.set('cropBlob', null);
     },
     filePicked(file) {
       let component = this;

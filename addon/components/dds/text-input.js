@@ -7,6 +7,12 @@ export default Component.extend({
     keyUp() {
       this.set('apiError', '');
       this.set('hasChanged', true);
+      if (this.get('keyUp')) {
+        this.keyUp();
+      }
+      if(this.get('signal') != undefined) {
+        this.incrementProperty('signal');
+      }
     },
     focusOut() {
       this.set('hasChanged', true);

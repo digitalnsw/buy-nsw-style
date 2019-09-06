@@ -67,6 +67,9 @@ export default Component.extend({
         this.set('field', null);
       }
       this.documents.removeAt(index);
+      if (this.get('signal') != undefined) {
+        this.incrementProperty('signal');
+      }
     },
     uploadDocument(file) {
       this.set('hasChanged', true);
@@ -81,6 +84,9 @@ export default Component.extend({
           } else {
             component.set('field', body.id);
             component.set('documents', [ response ]);
+          }
+          if (this.get('signal') != undefined) {
+            this.incrementProperty('signal');
           }
         });
       })
