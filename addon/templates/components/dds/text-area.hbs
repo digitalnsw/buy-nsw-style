@@ -1,6 +1,8 @@
 <label for="textarea">{{label-text}}</label>
 {{textarea
-  class="au-text-input au-text-input--block"
+  class=(concat (concat "au-text-input au-text-input--block " 
+      (if thin "au-text-input--thin"))
+      (if theme (concat "au-text-input--" theme)))
   focus-out=(action "focusOut")
   key-up = (action (mut hasChanged) true)
   value=(mut field)

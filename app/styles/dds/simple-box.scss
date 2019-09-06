@@ -45,7 +45,7 @@
     color: $BUY-color-foreground-text;
     border-top: 2rem solid $BUY-color-callout-border;
     background-image: linear-gradient(to right, $BUY-color-callout-light-back, $BUY-color-callout-background);
-    a {
+    a.icon {
       text-decoration: none;
       margin: 0.5rem;
     }
