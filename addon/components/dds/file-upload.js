@@ -37,9 +37,6 @@ export default Component.extend({
   }),
   didReceiveAttrs() {
     this._super(...arguments);
-    if(this.get('multiple') && !Array.isArray(this.field)){
-      this.set('field', []);
-    }
     if (!this.get('fieldAndDocumentsMatch')) {
       let component = this;
       component.set('documents', []);
@@ -85,8 +82,8 @@ export default Component.extend({
             component.set('field', body.id);
             component.set('documents', [ response ]);
           }
-          if (this.get('signal') != undefined) {
-            this.incrementProperty('signal');
+          if (component.get('signal') != undefined) {
+            component.incrementProperty('signal');
           }
         });
       })

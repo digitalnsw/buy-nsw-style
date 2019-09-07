@@ -30,6 +30,9 @@ ul.au-tags.files {
       float: right;
       text-decoration: none;
     }
+    &.sapphire {
+      border-color: $BUY-color-action-alt-shade;
+    }
   }
 }
 

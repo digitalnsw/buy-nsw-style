@@ -1,15 +1,8 @@
-<br>
-<p>
-  <b> Upload a file</b>
-</p>
-<p class="gray">
-  The file should be no larger than 5MB and in PDF, PNG or JPEG format. You can upload a single document or separate documents by using the 'Add another file' button below.
-</p>
 <p>
   {{#if documents.length}}
     <ul class="au-tags files">
       {{#each documents as |document index|}}
-        <li class="files">
+        <li class="files {{theme}}">
           <a class="file">
             {{document.original_filename}} ( {{document.extension}} , {{number-to-human-size document.size}} )
           </a>
@@ -30,11 +23,11 @@
                    accept=(if fileTypes fileTypes (array "image/jpeg" "image/png" "application/pdf"))
                    multiple=multiple
                    onfileadd=(action "uploadDocument")}}
-      <a class="au-btn au-btn--tertiary">
-        {{#if documents.length}}
+      <a class="au-btn au-btn--tertiary {{if theme (concat "au-btn--tertiary--" theme)}}">
+        {{#if (and documents.length multiple)}}
           Add another file
         {{else}}
-          Choose a file
+          {{fa-icon "plus-circle" prefix="fas"}} Choose a file
         {{/if}}
       </a>
     {{/file-upload}}
