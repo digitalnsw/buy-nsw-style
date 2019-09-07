@@ -1,0 +1,24 @@
+img.avatar, svg.avatar {
+  color: $BUY-color-action-primary;
+  border-radius: 50%;
+  margin: 1rem 0;
+  width: 80%;
+  max-width: 9rem;
+}
+.cropped-avatar {
+  canvas {
+    border-radius: 50%;
+    max-width: 100%;
+  }
+}
+//-----------------------------------------
+.au-avatar {
+  max-width: 16rem;
+  .cropper-container {
+    margin: 1rem 0;
+  }
+  .cropped-avatar {
+    margin: 1rem 0;
+    max-width: 9rem;
+  }
+}

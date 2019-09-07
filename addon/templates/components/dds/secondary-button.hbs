@@ -1,11 +1,17 @@
 {{#if route}}
   {{link-to label route
-    class=(if wide "au-btn au-btn--secondary au-btn--wide" "au-btn au-btn--secondary")
+    class=(concat (concat (concat "au-btn au-btn--secondary "
+        (if wide "au-btn--wide "))
+        (if thin "au-btn--thin "))
+        (if theme (concat "au-btn--secondary--" theme)))
     disabled=disabled
   }}
 {{else}}
   <a
-    class={{if wide "au-btn au-btn--secondary au-btn--wide" "au-btn au-btn--secondary"}}
+    class={{concat (concat (concat "au-btn au-btn--secondary "
+        (if wide "au-btn--wide "))
+        (if thin "au-btn--thin "))
+        (if theme (concat "au-btn--secondary--" theme))}}
     onclick={{unless disabled onClick}}
     disabled={{disabled}}
   >

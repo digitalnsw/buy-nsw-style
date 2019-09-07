@@ -76,7 +76,7 @@ a.au-btn {
   }
 
   &.au-btn--thin {
-    @include AU-space( padding, 0.15unit 1.5unit );
+    @include AU-space( padding, 0.15unit 0.75unit );
   }
 
   &.au-btn--sapphire {
@@ -168,6 +168,32 @@ a.au-btn {
 				color: $AU-colordark-background;
 			}
 		}
+
+    &.au-btn--secondary--sapphire {
+      color: $BUY-color-action-alt-shade;
+      border-color: $BUY-color-action-alt-shade;
+      text-decoration: none;
+
+      // hover
+      &:hover:not(:disabled) {
+        border-color: $BUY-color-action-alt;
+        text-decoration: none;
+      }
+    }
+
+    &.au-btn--secondary--turquoise {
+      color: $BUY-color-action-turquoise;
+      border-color: $BUY-color-action-turquoise;
+      text-decoration: none;
+
+      // hover
+      &:hover:not(:disabled) {
+        color: $BUY-color-foreground-text;
+        border-color: $BUY-color-action-turquoise-alt;
+        text-decoration: none;
+      }
+    }
+
 	}
 
 	/**
@@ -193,6 +219,27 @@ a.au-btn {
 				color: $AU-colordark-foreground-text;
 			}
 		}
+
+    &.au-btn--tertiary--sapphire {
+      color: $BUY-color-action-alt-shade;
+      text-decoration: none;
+
+      // hover
+      &:hover:not(:disabled) {
+        text-decoration: none;
+      }
+    }
+
+    &.au-btn--tertiary--turquoise {
+      color: $BUY-color-action-turquoise;
+      text-decoration: none;
+
+      // hover
+      &:hover:not(:disabled) {
+        color: $BUY-color-foreground-text;
+        text-decoration: none;
+      }
+    }
 	}
 
 	&.au-btn--pride {

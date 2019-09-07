@@ -4,7 +4,7 @@
       (if thin "au-text-input--thin"))
       (if theme (concat "au-text-input--" theme)))
   focus-out=(action "focusOut")
-  key-up = (action (mut hasChanged) true)
+  key-up = (action "keyUp")
   value=(mut field)
   maxlength=maxLength
 }}
