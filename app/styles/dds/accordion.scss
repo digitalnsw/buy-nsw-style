@@ -32,13 +32,21 @@
     border: none;
     box-shadow: 0px 0px 10px lightgrey;
     padding: 1rem 2rem;
-    border-radius: 1rem;
+    border-radius: 0.5rem;
     margin: 2rem 0;
 
     .au-accordion__title {
       font-family: MontserratBold;
       color: $BUY-color-banner-background;
+      &:hover {
+        color: $BUY-color-action-primary;
+      }
       background-color: $BUY-color-ui-background;
+      .au-accordion__subline {
+        font-family: MontserratRegular;
+        padding-top: 1rem;
+        @include AU-fontgrid( sm );
+      }
     }
   }
 }
