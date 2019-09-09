@@ -23,9 +23,9 @@
                    onfileadd=(action "uploadDocument")}}
       <a class="au-btn au-btn--tertiary {{if theme (concat "au-btn--tertiary--" theme)}}">
         {{#if (and documents.length multiple)}}
-          Add another file
+          {{fa-icon "file-upload" prefix="fas"}} Add another file
         {{else}}
-          {{fa-icon "plus-circle" prefix="fas"}} Choose a file
+          {{fa-icon "file-upload" prefix="fas"}} Choose a file
         {{/if}}
       </a>
     {{/file-upload}}
