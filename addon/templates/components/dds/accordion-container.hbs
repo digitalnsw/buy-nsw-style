@@ -9,18 +9,22 @@
       <div>
         {{ title }}
       </div>
-      <div class="au-accordion__subline">
-        {{ subline }}
-      </div>
+      {{#if subline}}
+        <div class="au-accordion__subline">
+          {{ subline }}
+        </div>
+      {{/if}}
     </a>
   {{else}}
     <span class="au-accordion__title locked">
       <div>
         {{ title }}
       </div>
-      <div class="au-accordion__subline">
-        {{ subline }}
-      </div>
+      {{#if subline}}
+        <div class="au-accordion__subline">
+          {{ subline }}
+        </div>
+      {{/if}}
     </span>
   {{/if}}
 
