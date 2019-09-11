@@ -42,7 +42,7 @@
         color: $BUY-color-action-primary;
       }
       background-color: $BUY-color-ui-background;
-      .au-accordion__subline {
+      .au-accordion__subtitle {
         font-family: MontserratRegular;
         padding-top: 1rem;
         @include AU-fontgrid( sm );
