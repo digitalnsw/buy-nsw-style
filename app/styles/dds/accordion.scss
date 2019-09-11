@@ -27,28 +27,83 @@
 		}
 	}
 
-  &.au-accordion--sapphire {
-    background-color: $BUY-color-ui-background;
-    border: none;
-    box-shadow: 0px 0px 10px lightgrey;
-    padding: 1rem 2rem;
-    border-radius: 0.5rem;
-    margin: 2rem 0;
+	&.au-accordion--sapphire {
+		background: transparent;
+		border: none;
+		@include AU-space( margin-bottom, 2unit);
 
-    .au-accordion__title {
-      font-family: MontserratBold;
-      color: $BUY-color-banner-background;
-      &:hover {
-        color: $BUY-color-action-primary;
-      }
-      background-color: $BUY-color-ui-background;
-      .au-accordion__subline {
-        font-family: MontserratRegular;
-        padding-top: 1rem;
-        @include AU-fontgrid( sm );
-      }
-    }
-  }
+		.au-accordion__body.au-accordion--open {
+			box-shadow: 10px 0 6px -5px rgba(0, 0, 0, .3);
+			@include AU-space( margin-top, 1unit);
+			> .au-accordion__body-wrapper {
+				@include AU-space( padding, 2unit);
+			
+				> h5:first-of-type {
+					margin-top: 0;
+				}
+			}
+		}
+
+		.au-accordion__title {
+			color: $BUY-color-banner-background;
+			@include AU-space( margin-bottom, 0.5unit);
+			background: transparent;
+			padding: 0;
+
+			&:not(.locked):after {
+				color: $BUY-color-action-primary;
+				content: "View";
+				background: none;
+				@include AU-fontgrid( sm );
+				text-decoration: underline;
+				transition: none;
+			}
+
+			&.au-accordion--closed::after {
+				transform: none;
+			}
+
+			> h3 {
+				font-family: MontserratBold;
+
+				&:hover {
+					color: $BUY-color-action-primary;
+					// new primary action color, to be applied to buttons mainly:
+					//color: rgb(66, 0, 128)
+				}
+			}
+		}
+
+		.au-accordion__subtitle {
+			font-family: MontserratRegular;
+			@include AU-space( padding-top, 1unit);
+			@include AU-fontgrid( sm );
+			margin-top: 0;
+		}
+
+		.plus-circle {
+			.au-btn--tertiary {
+				color: $BUY-color-action-primary;
+				> .svg-inline--fa.fa-w-16 {
+					@include AU-space( height, 1.5unit);
+					@include AU-space( margin-right, 0.3unit);
+					@include AU-space( width, 1.5unit);
+					vertical-align: middle;
+				}
+			}
+		}
+	}
+}
+
+.has-tip  {
+	.au-accordion.au-accordion--sapphire {
+		.au-accordion__subtitle {
+			&::before {
+				content: "Tip: ";
+				font-family: MontserratBold;
+			}
+		}
+	}
 }
 
 .au-accordion + .au-accordion {
@@ -60,25 +115,15 @@
 .au-accordion__title {
 	@include AU-fontgrid( md, heading );
 	@include AU-space( padding, 1unit 2.5unit 1unit 1unit );
-	width: 100%;
-	display: block;
 	color: $AU-color-foreground-action;
-	text-decoration: none;
-	text-decoration-skip: ink;
 	font-weight: normal;
 	position: relative;
-
-	// button resets
-	box-sizing: border-box;
 	margin: 0;
 	cursor: pointer;
-	border: none;
-	text-align: left;
-	font-family: inherit;
 
-  &.locked {
-    cursor: default;
-  }
+	&.locked {
+		cursor: default;
+	}
 
 	&:hover {
 		text-decoration: none;
@@ -190,8 +235,8 @@
 	}
 
   &.au-accordion--sapphire {
-    border-top: none;
-    background-color: $BUY-color-ui-background;
+	border-top: none;
+	background-color: $BUY-color-ui-background;
   }
 }
 
