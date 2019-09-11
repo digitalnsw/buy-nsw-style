@@ -10,7 +10,7 @@ export default Component.extend({
     if(canvas.toBlob) {
       canvas.toBlob(then);
     } else {
-       let dataURL = canvasImage.toDataURL();
+       let dataURL = canvas.toDataURL();
        let bytes = atob(dataURL.split(',')[1])
        let arr = new Uint8Array(bytes.length);
        for(let i=0; i<bytes.length; i++){
