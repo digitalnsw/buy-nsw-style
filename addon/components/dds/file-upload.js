@@ -41,7 +41,7 @@ export default Component.extend({
       let component = this;
       component.set('documents', []);
       if(this.get('multiple')) {
-        if (this.get('field').length > 0) {
+        if (this.get('field') && this.get('field').length > 0) {
           this.fileService.loadDocument(this.get("field")).then((response) => {
             component.set('documents', response.toArray());
           });
