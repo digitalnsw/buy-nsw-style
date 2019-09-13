@@ -52,26 +52,11 @@
 			box-shadow: 0 2px 5px 0 $BUY-color-sapphire-light;
 
 			&:not(.locked):after {
-				background-color: $BUY-color-banner-background;
-				background-image: AU-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">' +
-		'<path fill="#fff" d="M64 0l64 64-16 16-64-64"/>' +
-		'<path fill="#fff" d="M64 0l16 16-64 64L0 64"/>' +
-	'</svg>');
-				background-position: 50% 70%;
-				background-size: 16px;
-				border-radius: 50%;
-				color: #fff;
+				background-image: AU-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">' +
+'<path fill="' + $BUY-color-banner-background + '" d="M8 256C8 119 119 8 256 8s248 111 248 248-111 248-248 248S8 393 8 256zm231-113.9L103.5 277.6c-9.4 9.4-9.4 24.6 0 33.9l17 17c9.4 9.4 24.6 9.4 33.9 0L256 226.9l101.6 101.6c9.4 9.4 24.6 9.4 33.9 0l17-17c9.4-9.4 9.4-24.6 0-33.9L273 142.1c-9.4-9.4-24.6-9.4-34 0z"/>' +
+'</svg>');
 				height: 26px;
 				width: 26px;
-			}
-
-			&:hover {		
-				&:after {
-					background-image: AU-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">' +
-						'<path fill="#fff" d="M64 0l64 64-16 16-64-64"/>' +
-						'<path fill="#fff" d="M64 0l16 16-64 64L0 64"/>' +
-					'</svg>');
-				}
 			}
 
 			> h3 {
