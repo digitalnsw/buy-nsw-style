@@ -33,9 +33,10 @@
 		@include AU-space( margin-bottom, 2unit);
 
 		.au-accordion__body.au-accordion--open {
-			box-shadow: 10px 0 6px -5px rgba(0, 0, 0, .3);
+			border: 1px solid $BUY-color-sapphire-light;
 			@include AU-space( margin-top, 1unit);
 			> .au-accordion__body-wrapper {
+				background-color: #fff;
 				@include AU-space( padding, 2unit);
 			
 				> h5:first-of-type {
@@ -48,19 +49,29 @@
 			color: $BUY-color-banner-background;
 			@include AU-space( margin-bottom, 0.5unit);
 			background: transparent;
-			padding: 0;
+			box-shadow: 0 2px 5px 0 $BUY-color-sapphire-light;
 
 			&:not(.locked):after {
-				color: $BUY-color-action-primary;
-				content: "View";
-				background: none;
-				@include AU-fontgrid( sm );
-				text-decoration: underline;
-				transition: none;
+				background-color: $BUY-color-banner-background;
+				background-image: AU-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">' +
+		'<path fill="#fff" d="M64 0l64 64-16 16-64-64"/>' +
+		'<path fill="#fff" d="M64 0l16 16-64 64L0 64"/>' +
+	'</svg>');
+				background-position: 50% 70%;
+				background-size: 16px;
+				border-radius: 50%;
+				color: #fff;
+				height: 26px;
+				width: 26px;
 			}
 
-			&.au-accordion--closed::after {
-				transform: none;
+			&:hover {		
+				&:after {
+					background-image: AU-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">' +
+						'<path fill="#fff" d="M64 0l64 64-16 16-64-64"/>' +
+						'<path fill="#fff" d="M64 0l16 16-64 64L0 64"/>' +
+					'</svg>');
+				}
 			}
 
 			> h3 {
@@ -90,17 +101,6 @@
 					@include AU-space( width, 1.5unit);
 					vertical-align: middle;
 				}
-			}
-		}
-	}
-}
-
-.has-tip  {
-	.au-accordion.au-accordion--sapphire {
-		.au-accordion__subtitle {
-			&::before {
-				content: "Tip: ";
-				font-family: MontserratBold;
 			}
 		}
 	}
