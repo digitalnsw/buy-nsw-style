@@ -1,31 +1,31 @@
 <section class="au-accordion {{if theme (concat "au-accordion--" theme)}}" id={{id}}>
   {{#if collapsable}}
-    <a
+    <div
       class="au-accordion__title {{expandedClass}}"
       aria-controls="accordion-default"
       aria-expanded={{ expanded }}
       onclick={{action "toggle"}}
     >
-      <div>
+      <h3>
         {{ title }}
-      </div>
-      {{#if subtitle}}
-        <div class="au-accordion__subtitle">
+      </h3>
+      {{#if subtitle}}
+        <p class="au-accordion__subtitle">
           {{ subtitle }}
-        </div>
+        </p>
       {{/if}}
-    </a>
+    </div>
   {{else}}
-    <span class="au-accordion__title locked">
-      <div>
+    <div class="au-accordion__title locked">
+      <h3>
         {{ title }}
-      </div>
-      {{#if subtitle}}
-        <div class="au-accordion__subtitle">
+      </h3>
+      {{#if subtitle}}
+        <p class="au-accordion__subtitle">
           {{ subtitle }}
-        </div>
+        </p>
       {{/if}}
-    </span>
+    </div>
   {{/if}}
 
   <div class="au-accordion__body {{expandedClass}}">

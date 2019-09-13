@@ -82,8 +82,10 @@ a.au-btn {
   &.au-btn--sapphire {
     color: white;
     background-color: $BUY-color-action-alt-shade;
-    border-color: $BUY-color-action-alt-shade;
-    text-decoration: none;
+		border-color: $BUY-color-action-alt-shade;
+		@include AU-space( padding, 0.5unit 1.75unit );
+		text-decoration: none;
+		text-transform: uppercase;
 
     // hover
     &:hover:not(:disabled) {

@@ -27,28 +27,68 @@
 		}
 	}
 
-  &.au-accordion--sapphire {
-    background-color: $BUY-color-ui-background;
-    border: none;
-    box-shadow: 0px 0px 10px lightgrey;
-    padding: 1rem 2rem;
-    border-radius: 0.5rem;
-    margin: 2rem 0;
+	&.au-accordion--sapphire {
+		background: transparent;
+		border: none;
+		@include AU-space( margin-bottom, 2unit);
 
-    .au-accordion__title {
-      font-family: MontserratBold;
-      color: $BUY-color-banner-background;
-      &:hover {
-        color: $BUY-color-action-primary;
-      }
-      background-color: $BUY-color-ui-background;
-      .au-accordion__subtitle {
-        font-family: MontserratRegular;
-        padding-top: 1rem;
-        @include AU-fontgrid( sm );
-      }
-    }
-  }
+		.au-accordion__body.au-accordion--open {
+			border: 1px solid $BUY-color-sapphire-light;
+			@include AU-space( margin-top, 1unit);
+			> .au-accordion__body-wrapper {
+				background-color: #fff;
+				@include AU-space( padding, 2unit);
+			
+				> h5:first-of-type {
+					margin-top: 0;
+				}
+			}
+		}
+
+		.au-accordion__title {
+			color: $BUY-color-banner-background;
+			@include AU-space( margin-bottom, 0.5unit);
+			background: transparent;
+			box-shadow: 0 2px 5px 0 $BUY-color-sapphire-light;
+
+			&:not(.locked):after {
+				background-image: AU-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">' +
+'<path fill="' + $BUY-color-banner-background + '" d="M8 256C8 119 119 8 256 8s248 111 248 248-111 248-248 248S8 393 8 256zm231-113.9L103.5 277.6c-9.4 9.4-9.4 24.6 0 33.9l17 17c9.4 9.4 24.6 9.4 33.9 0L256 226.9l101.6 101.6c9.4 9.4 24.6 9.4 33.9 0l17-17c9.4-9.4 9.4-24.6 0-33.9L273 142.1c-9.4-9.4-24.6-9.4-34 0z"/>' +
+'</svg>');
+				height: 26px;
+				width: 26px;
+			}
+
+			> h3 {
+				font-family: MontserratBold;
+
+				&:hover {
+					color: $BUY-color-action-primary;
+					// new primary action color, to be applied to buttons mainly:
+					//color: rgb(66, 0, 128)
+				}
+			}
+		}
+
+		.au-accordion__subtitle {
+			font-family: MontserratRegular;
+			@include AU-space( padding-top, 1unit);
+			@include AU-fontgrid( sm );
+			margin-top: 0;
+		}
+
+		.plus-circle {
+			.au-btn--tertiary {
+				color: $BUY-color-action-primary;
+				> .svg-inline--fa.fa-w-16 {
+					@include AU-space( height, 1.5unit);
+					@include AU-space( margin-right, 0.3unit);
+					@include AU-space( width, 1.5unit);
+					vertical-align: middle;
+				}
+			}
+		}
+	}
 }
 
 .au-accordion + .au-accordion {
@@ -60,25 +100,15 @@
 .au-accordion__title {
 	@include AU-fontgrid( md, heading );
 	@include AU-space( padding, 1unit 2.5unit 1unit 1unit );
-	width: 100%;
-	display: block;
 	color: $AU-color-foreground-action;
-	text-decoration: none;
-	text-decoration-skip: ink;
 	font-weight: normal;
 	position: relative;
-
-	// button resets
-	box-sizing: border-box;
 	margin: 0;
 	cursor: pointer;
-	border: none;
-	text-align: left;
-	font-family: inherit;
 
-  &.locked {
-    cursor: default;
-  }
+	&.locked {
+		cursor: default;
+	}
 
 	&:hover {
 		text-decoration: none;
@@ -190,8 +220,8 @@
 	}
 
   &.au-accordion--sapphire {
-    border-top: none;
-    background-color: $BUY-color-ui-background;
+	border-top: none;
+	background-color: $BUY-color-ui-background;
   }
 }
 
