@@ -37,15 +37,4 @@
       <div class="clear-both"></div>
     </p>
   {{/if}}
-
-  {{#if cropBlob}}
-    <div class="cropped-avatar" style="border-radius: 50%">
-      {{croppedAvatar}}
-    </div>
-    {{dds/primary-button
-      thin=true
-      theme="sapphire"
-      onClick=(action "upload")
-      label="Upload"}}
-  {{/if}}
 </div>
