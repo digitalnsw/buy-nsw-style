@@ -22,6 +22,7 @@ export default Component.extend({
 
   actions: {
     crop() {
+      this.get('overlay').show();
       let croppedImage = this.get('cropper').getCroppedCanvas();
       let component = this;
       this.toBlob(croppedImage, function (blob) {
@@ -36,6 +37,8 @@ export default Component.extend({
             if(component.get('signal') != undefined) {
               component.incrementProperty('signal');
             }
+          }, function() {
+            component.get('overlay').hide();
           }
         );
       });
