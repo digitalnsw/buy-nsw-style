@@ -1,9 +1,12 @@
 img.avatar, svg.avatar {
-  color: $BUY-color-action-primary;
   border-radius: 50%;
   margin: 1rem 0;
   width: 80%;
   max-width: 9rem;
+}
+svg.avatar {
+  color: lightgray;
+  margin: 1rem;
 }
 .cropped-avatar {
   canvas {
