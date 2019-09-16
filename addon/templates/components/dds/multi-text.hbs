@@ -1,0 +1,36 @@
+{{#each field as |item index|}}
+  <p>
+    <span class="col-xs-4 col-md-2 list-item">
+      <b>{{inc index}}.</b>
+    </span>
+    <div class="col-xs-32 col-md-34">
+      {{dds/text-input
+        signal=(mut signal)
+        field=(mut (get field index))
+        thin=thin
+        noLabel=true
+        wide=true
+      }}
+    </div>
+    <div class="clear-both"></div>
+  </p>
+{{/each}}
+<p>
+  <div class="col-sm-3 col-md-2">
+  </div>
+  <div class="col-sm-24 plus-circle">
+    {{dds/tertiary-button
+      onClick=(action "addRow")
+      icon="plus-circle"
+      label="Add row"
+      theme=theme
+      thin=thin
+    }}
+    {{#if (and (or showError hasChanged) invalid)}}
+      {{dds/validation-error type="error" message=errorMessage float="left"}}
+    {{else if (and apiError (not hasChanged))}}
+      {{dds/validation-error type="warning" message=apiError float="left"}}
+    {{/if}}
+  </div>
+  <div class="clear-both"></div>
+</p>
