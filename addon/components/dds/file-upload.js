@@ -73,6 +73,15 @@ export default Component.extend({
       let component = this;
       let fileService = this.get('fileService');
       let multiple = component.get('multiple');
+      if (!this.get('fileTypes').includes(file.blob.type)) {
+        this.set('fileError', 'File type not valid');
+        return;
+      } else if ((file.blob.size/1024/1024) > 20) {
+        this.set('fileError', 'File is larger than 20MB');
+        return;
+      }
+      this.set('fileError', null);
+
       fileService.get('uploadDocument').perform(file, function(body){
         fileService.find(body.id).then((response) =>{
           if (multiple) {
