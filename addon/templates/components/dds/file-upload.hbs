@@ -18,21 +18,26 @@
   <br>
   {{#unless disabled}}
     {{#file-upload name=name
-                   accept=(if fileTypes fileTypes (array "image/jpeg" "image/png" "application/pdf"))
-                   multiple=multiple
-                   onfileadd=(action "uploadDocument")}}
-      <a class="au-btn au-btn--tertiary {{if theme (concat "au-btn--tertiary--" theme)}}">
-        {{#if (and documents.length multiple)}}
-          {{fa-icon "file-upload" prefix="fas"}} Add another file
-        {{else}}
-          {{fa-icon "file-upload" prefix="fas"}} Choose a file
-        {{/if}}
-      </a>
+                   accept=fileTypes
+                   onfileadd=(action "uploadDocument")  as |queue|}}
+      {{#if queue.files.length}}
+        Uploading ...
+      {{else}}
+        <a class="au-btn au-btn--tertiary {{if theme (concat "au-btn--tertiary--" theme)}}">
+          {{#if (and documents.length multiple)}}
+            {{fa-icon "file-upload" prefix="fas"}} Add another file
+          {{else}}
+            {{fa-icon "file-upload" prefix="fas"}} Choose a file
+          {{/if}}
+        </a>
+      {{/if}}
     {{/file-upload}}
   {{/unless}}
 </p>
 <div class="clear-both"></div>
-{{#if (and (or showError hasChanged) invalid)}}
+{{#if fileError}}
+  {{dds/validation-error type="error" message=fileError float="left"}}
+{{else if (and (or showError hasChanged) invalid)}}
   {{dds/validation-error type="error" message=errorMessage float="left"}}
 {{else if (and apiError (not hasChanged))}}
   {{dds/validation-error type="warning" message=apiError float="left"}}

@@ -8,6 +8,8 @@ export default Component.extend({
   store: inject(),
   auth: inject(),
   documents: null,
+  fileTypes: ["image/jpeg", "image/png", "application/pdf"],
+
   fieldAndDocumentsMatch: computed('multiple', 'field', 'documents', function() {
     if(this.get('documents') == null) {
       return false;
@@ -69,6 +71,14 @@ export default Component.extend({
       }
     },
     uploadDocument(file) {
+      if(!this.get('fileTypes').includes(file.blob.type)) {
+        this.set('fileError', 'File type is not valid');
+        return;
+      } else if (file.blob.size > 20 * 1024 * 1024) {
+        this.set('fileError', 'File is larger than 20MB');
+        return;
+      }
+      this.set('fileError', null);
       this.set('hasChanged', true);
       let component = this;
       let fileService = this.get('fileService');
