@@ -32,6 +32,9 @@
   {{/unless}}
 </p>
 <div class="clear-both"></div>
+{{#if fileError}}
+  {{dds/validation-error type="error" message=fileError float="left"}}
+{{/if}}
 {{#if (and (or showError hasChanged) invalid)}}
   {{dds/validation-error type="error" message=errorMessage float="left"}}
 {{else if (and apiError (not hasChanged))}}
