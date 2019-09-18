@@ -14,6 +14,7 @@ export default Component.extend({
       }
     },
     keyUp() {
+      this.set('hasChanged', true);
       if (this.get('keyUp')) {
         this.keyUp();
       }
