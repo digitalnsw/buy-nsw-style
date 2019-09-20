@@ -20,17 +20,13 @@
     {{#file-upload name=name
                    accept=fileTypes
                    onfileadd=(action "uploadDocument")  as |queue|}}
-      {{#if queue.files.length}}
-        Uploading ...
-      {{else}}
-        <a class="au-btn au-btn--tertiary {{if theme (concat "au-btn--tertiary--" theme)}}">
-          {{#if (and documents.length multiple)}}
-            {{fa-icon "file-upload" prefix="fas"}} Add another file
-          {{else}}
-            {{fa-icon "file-upload" prefix="fas"}} Choose a file
-          {{/if}}
-        </a>
-      {{/if}}
+      <a class="au-btn au-btn--tertiary {{if theme (concat "au-btn--tertiary--" theme)}}">
+        {{#if (and documents.length multiple)}}
+          {{fa-icon "file-upload" prefix="fas"}} Add another file
+        {{else}}
+          {{fa-icon "file-upload" prefix="fas"}} Choose a file
+        {{/if}}
+      </a>
     {{/file-upload}}
   {{/unless}}
 </p>
