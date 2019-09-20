@@ -60,6 +60,9 @@ export default Component.extend({
   actions: {
     removeDocument(index) {
       this.set('hasChanged', true);
+      if(this.get('apiError')) {
+        this.set('apiError', '');
+      }
       if (this.get('multiple')) {
         this.field.removeAt(index);
       } else {
@@ -80,6 +83,9 @@ export default Component.extend({
         return;
       }
       this.set('fileError', null);
+      if(this.get('apiError')) {
+        this.set('apiError', '');
+      }
       this.set('hasChanged', true);
       let component = this;
       let fileService = this.get('fileService');
