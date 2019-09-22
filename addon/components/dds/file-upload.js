@@ -83,6 +83,7 @@ export default Component.extend({
         return;
       }
       this.set('fileError', null);
+      this.get('overlay').show();
       if(this.get('apiError')) {
         this.set('apiError', '');
       }
@@ -104,6 +105,8 @@ export default Component.extend({
             component.incrementProperty('signal');
           }
         });
+      }, function() {
+        component.get('overlay').hide();
       })
     }
   }
