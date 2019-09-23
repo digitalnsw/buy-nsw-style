@@ -78,8 +78,8 @@ export default Component.extend({
         this.set('fileError', 'File type is not valid');
         return;
       }
-      if (file.blob.size > 20 * 1024 * 1024) {
-        this.set('fileError', 'File is larger than 20MB');
+      if (file.blob.size > 10 * 1024 * 1024) {
+        this.set('fileError', 'File is larger than 10MB');
         return;
       }
       this.set('fileError', null);

@@ -29,7 +29,7 @@ export default Component.extend({
       let croppedImage = this.get('cropper').getCroppedCanvas();
       let component = this;
       this.toBlob(croppedImage, function (blob) {
-        if (blob.size > 20 * 1024 * 1024) {
+        if (blob.size > 10 * 1024 * 1024) {
           component.set('fileError', 'Cropped image is larger than 20MB');
           component.get('overlay').hide();
           return;
