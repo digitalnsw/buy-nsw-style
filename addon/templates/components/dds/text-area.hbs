@@ -1,7 +1,7 @@
 <label for="textarea">{{label-text}}</label>
 {{textarea
-  class=(concat (concat "au-text-input au-text-input--block " 
-      (if thin "au-text-input--thin"))
+  class=(concat "au-text-input au-text-input--block "
+      (if thin "au-text-input--thin")
       (if theme (concat "au-text-input--" theme)))
   focus-out=(action "focusOut")
   key-up = (action "keyUp")
@@ -13,8 +13,8 @@
     {{sub maxLength (if field (get field "length") 0)}} characters remaining
   </p>
 {{/if}}
-{{#if (and (or showError hasChanged) invalid)}}
-  {{dds/validation-error type="error" message=errorMessage float="left"}}
-{{else if (and apiError (not hasChanged))}}
-  {{dds/validation-error type="warning" message=apiError float="left"}}
+{{#if (and (not disabled) (and (or showError hasChanged) invalid))}}
+  {{dds/validation-error thin=thin type=(or errorType "error") message=errorMessage float=(or float "left")}}
+{{else if (and apiError (or keepApiError (not hasChanged)))}}
+  {{dds/validation-error thin=thin type="warning" message=apiError float=(or float "left")}}
 {{/if}}

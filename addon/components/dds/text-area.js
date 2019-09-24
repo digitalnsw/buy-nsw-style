@@ -6,6 +6,9 @@ export default Component.extend({
   actions: {
     focusOut() {
       this.set('hasChanged', true);
+      if(this.get('apiError')) {
+        this.set('apiError', '');
+      }
       if (this.get('focusOut')) {
         this.focusOut();
       }

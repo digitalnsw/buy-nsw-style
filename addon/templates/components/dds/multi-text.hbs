@@ -10,6 +10,8 @@
         thin=thin
         noLabel=true
         wide=true
+        apiError=(get apiError index)
+        keepApiError=true
       }}
     </div>
     <div class="clear-both"></div>
@@ -24,10 +26,8 @@
       theme=theme
       thin=thin
     }}
-    {{#if (and (or showError hasChanged) invalid)}}
-      {{dds/validation-error type="error" message=errorMessage}}
-    {{else if (and apiError (not hasChanged))}}
-      {{dds/validation-error type="warning" message=apiError}}
+    {{#if (and (not disabled) (and (or showError hasChanged) invalid))}}
+      {{dds/validation-error thin=thin type=(or errorType "error") message=errorMessage}}
     {{/if}}
   </div>
 </p>
