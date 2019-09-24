@@ -9,10 +9,10 @@
   {{/unless}}
   <div class={{if allRow "col-sm-36" "col-sm-36 col-md-24"}}>
     {{input
-      class=(concat (concat (concat
+      class=(concat
               "au-text-input "
-              (if wide "au-text-input--block "))
-              (if thin "au-text-input--thin "))
+              (if wide "au-text-input--block ")
+              (if thin "au-text-input--thin ")
               (if theme (concat "au-text-input--" theme)))
       value=(mut field)
       type=(if password "password" "text")

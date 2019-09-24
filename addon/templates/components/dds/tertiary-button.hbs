@@ -1,16 +1,16 @@
 {{#if route}}
   {{link-to label route
-    class=(concat (concat (concat "au-btn au-btn--tertiary "
-      (if wide "au-btn--wide "))
-      (if thin "au-btn--thin "))
+    class=(concat "au-btn au-btn--tertiary "
+      (if wide "au-btn--wide ")
+      (if thin "au-btn--thin ")
       (if theme (concat "au-btn--tertiary--" theme)))
     disabled=disabled
   }}
 {{else}}
   <a
-    class={{concat (concat (concat "au-btn au-btn--tertiary "
-      (if wide "au-btn--wide "))
-      (if thin "au-btn--thin "))
+    class={{concat "au-btn au-btn--tertiary "
+      (if wide "au-btn--wide ")
+      (if thin "au-btn--thin ")
       (if theme (concat "au-btn--tertiary--" theme))}}
     onclick={{unless disabled onClick}}
     disabled={{disabled}}
