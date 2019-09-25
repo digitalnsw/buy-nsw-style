@@ -1,9 +1,11 @@
 {{#each field as |item index|}}
   <p>
-    <span class="col-xs-1 col-md-1">
+    <div class={{concat "col-xs-2 col-sm-1 multi-text--label"
+      (if thin " multi-text--thin")
+    }}>
       <b>{{inc index}}.</b>
-    </span>
-    <div class="col-xs-32 col-md-34">
+    </div>
+    <div class="col-xs-32 col-sm-33">
       {{dds/text-input
         signal=(mut signal)
         field=(mut (get field index))
