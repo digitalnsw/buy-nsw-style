@@ -23,6 +23,9 @@ div.pull-left, span.pull-left {
 a.pull-right, span.pull-right, div.pull-right {
   margin-right: 1rem;
   float: right;
+  &.no-margin {
+    margin-right: 0;
+  }
 }
 
 div.float-right, span.float-right, a.float-right, b.float-right, p.float-right {
