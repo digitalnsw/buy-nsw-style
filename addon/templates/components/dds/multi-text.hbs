@@ -3,7 +3,7 @@
     <span class="col-xs-1 col-md-1">
       <b>{{inc index}}.</b>
     </span>
-    <div class="col-xs-32 col-md-35">
+    <div class="col-xs-32 col-md-34">
       {{dds/text-input
         signal=(mut signal)
         field=(mut (get field index))
@@ -27,7 +27,7 @@
       thin=thin
     }}
     {{#if (and (not disabled) (and (or showError hasChanged) invalid))}}
-      {{dds/validation-error thin=thin type=(or errorType "error") message=errorMessage}}
+      {{dds/validation-error thin=thin type=(or errorType "error") message=errorMessage float=(or float "left")}}
     {{/if}}
   </div>
 </p>
