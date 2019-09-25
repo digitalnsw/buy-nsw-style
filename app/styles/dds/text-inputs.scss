@@ -200,3 +200,9 @@ input[type=date]::-webkit-outer-spin-button{
 input[type=date]:after {
   content: "";
 }
+.multi-text--label {
+  padding: 0.65rem;
+  &.multi-text--thin {
+    padding: 0.25rem;
+  }
+}
