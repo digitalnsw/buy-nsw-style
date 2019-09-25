@@ -6,9 +6,9 @@
       aria-expanded={{ expanded }}
       onclick={{action "toggle"}}
     >
-      <h3>
+      <div class="title">
         {{ title }}
-      </h3>
+      </div>
       {{#if subtitle}}
         <p class="au-accordion__subtitle">
           {{ subtitle }}
@@ -17,9 +17,9 @@
     </div>
   {{else}}
     <div class="au-accordion__title locked">
-      <h3>
+      <div class="title">
         {{ title }}
-      </h3>
+      </div>
       {{#if subtitle}}
         <p class="au-accordion__subtitle">
           {{ subtitle }}

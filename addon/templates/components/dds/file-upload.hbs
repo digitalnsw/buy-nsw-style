@@ -23,6 +23,8 @@
       <span class="au-btn au-btn--tertiary pointer {{if theme (concat "au-btn--tertiary--" theme)}}">
         {{#if (and documents.length multiple)}}
           {{fa-icon "file-upload" prefix="fas"}} Add another file
+        {{else if (and documents.length (not multiple))}}
+          {{fa-icon "file-upload" prefix="fas"}} Choose another file
         {{else}}
           {{fa-icon "file-upload" prefix="fas"}} Choose a file
         {{/if}}
