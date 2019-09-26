@@ -110,5 +110,8 @@ div.header-alert {
   font-family: MontserratRegular;
   font-size: 0.8rem;
   text-align: center;
-  padding: 2px 5px;
+  padding: 1rem 0.5rem;
+  &.left-align {
+    text-align: left;
+  }
 }
