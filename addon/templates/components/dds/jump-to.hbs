@@ -18,7 +18,9 @@
             Please select
           </option>
           {{#each sections as |item|}}
-            <option value={{item.anchor}}>{{item.name}}</option>
+            {{#if item.show}}
+              <option value={{item.anchor}}>{{item.name}}</option>
+            {{/if}}
           {{/each}}
         </select>
       </div>
