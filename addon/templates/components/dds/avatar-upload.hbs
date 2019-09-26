@@ -3,9 +3,9 @@
     <p>
       {{dds/avatar avatarId=field fileService=fileService}}
       {{#file-upload name=(concat elementId "-avatar-file") accept=(array "image/jpeg" "image/png") onfileadd=(action "filePicked")}}
-        <a class="au-btn au-btn--primary au-btn--thin au-btn--sapphire pointer">
+        <span class="au-btn au-btn--primary au-btn--thin au-btn--sapphire pointer">
           Browse photo
-        </a>
+        </span>
       {{/file-upload}}
     </p>
   {{else}}
@@ -38,7 +38,9 @@
     </p>
   {{/if}}
 
-  {{#if (and (not disabled) (and (or showError hasChanged) invalid))}}
+  {{#if fileError}}
+    {{dds/validation-error type="error" message=fileError float="left"}}
+  {{else if (and (not disabled) (and (or showError hasChanged) invalid))}}
     {{dds/validation-error thin=thin type=(or errorType "error") message=errorMessage float=(or float "left")}}
   {{else if (and apiError (or keepApiError (not hasChanged)))}}
     {{dds/validation-error thin=thin type="warning" message=apiError float=(or float "left")}}

@@ -29,6 +29,7 @@ export default Component.extend({
   },
 
   animateScroll(targetPos, duration) {
+    if (window.scrollY != undefined) {
     const self = this;
     const startPos = window.scrollY;
     const speed = 20;
@@ -41,6 +42,9 @@ export default Component.extend({
       }
     };
     animate();
+    } else {
+      window.scrollTo(0, targetPos);
+    }
   },
 
   getAnimationPos(time, startPos, endPos, duration) {

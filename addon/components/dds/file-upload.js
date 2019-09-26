@@ -78,11 +78,12 @@ export default Component.extend({
         this.set('fileError', 'File type is not valid');
         return;
       }
-      if (file.blob.size > 20 * 1024 * 1024) {
-        this.set('fileError', 'File is larger than 20MB');
+      if (file.blob.size > 10 * 1024 * 1024) {
+        this.set('fileError', 'File should be smaller than 10MB');
         return;
       }
       this.set('fileError', null);
+      this.get('overlay').show();
       if(this.get('apiError')) {
         this.set('apiError', '');
       }
@@ -104,6 +105,8 @@ export default Component.extend({
             component.incrementProperty('signal');
           }
         });
+      }, function() {
+        component.get('overlay').hide();
       })
     }
   }

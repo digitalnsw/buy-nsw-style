@@ -29,6 +29,12 @@ export default Component.extend({
       let croppedImage = this.get('cropper').getCroppedCanvas();
       let component = this;
       this.toBlob(croppedImage, function (blob) {
+        if (blob.size > 10 * 1024 * 1024) {
+          component.set('fileError', 'Image should be smaller than 10MB');
+          component.get('overlay').hide();
+          return;
+        }
+        component.set('fileError', null);
         component.get('fileService').get('uploadAvatar').perform(
           blob,
           'cropped.png',
