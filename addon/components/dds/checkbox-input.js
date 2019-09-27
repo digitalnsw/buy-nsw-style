@@ -7,6 +7,7 @@ export default Component.extend({
     toggle() {
       this.toggleProperty('field');
       this.set('hasChanged', true);
+      this.set('apiError', '');
       if (this.get('onChange')) {
         this.onChange();
       }

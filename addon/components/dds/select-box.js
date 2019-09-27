@@ -7,6 +7,7 @@ export default Component.extend({
     onChange(value) {
       this.set('field', value);
       this.set('hasChanged', true);
+      this.set('apiError', '');
       if(this.get('signal') != undefined) {
         this.incrementProperty('signal');
       }

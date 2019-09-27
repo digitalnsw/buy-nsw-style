@@ -3,4 +3,16 @@ import layout from '../../templates/components/dds/checkbox-tree';
 
 export default Component.extend({
   layout,
+  actions: {
+    onChange() {
+      this.set('apiError', '');
+      this.set('hasChanged', true);
+      if (this.get('onChange')) {
+        this.onChange();
+      }
+      if(this.get('signal') != undefined) {
+        this.incrementProperty('signal');
+      }
+    },
+  }
 });
