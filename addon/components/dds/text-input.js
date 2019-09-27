@@ -5,9 +5,7 @@ export default Component.extend({
   layout,
   actions: {
     keyUp() {
-      if(this.get('apiError')) {
-        this.set('apiError', '');
-      }
+      this.set('apiError', '');
       this.set('hasChanged', true);
       if (this.get('keyUp')) {
         this.keyUp();

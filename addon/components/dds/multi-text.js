@@ -6,18 +6,14 @@ export default Component.extend({
   actions: {
     addRow() {
       this.field.pushObject('');
-      if(this.get('apiError')) {
-        this.set('apiError', '');
-      }
+      this.set('apiError', '');
       if(this.get('signal') != undefined) {
         this.incrementProperty('signal');
       }
     },
     removeRow(index) {
       this.field.removeAt(index);
-      if(this.get('apiError')) {
-        this.set('apiError', '');
-      }
+      this.set('apiError', '');
       if(this.get('signal') != undefined) {
         this.incrementProperty('signal');
       }

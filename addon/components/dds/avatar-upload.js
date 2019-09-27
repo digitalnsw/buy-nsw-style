@@ -23,9 +23,7 @@ export default Component.extend({
   actions: {
     crop() {
       this.get('overlay').show();
-      if(this.get('apiError')) {
-        this.set('apiError', '');
-      }
+      this.set('apiError', '');
       let croppedImage = this.get('cropper').getCroppedCanvas();
       let component = this;
       this.toBlob(croppedImage, function (blob) {
