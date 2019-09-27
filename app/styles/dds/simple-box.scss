@@ -57,6 +57,27 @@
     }
 	}
 }
+
+/**
+* a simple info/notification style
+* an info-circle icon - an "i" in a dark peach circle, sits in front of a single text string
+* the check-circle variant uses a tick in a green circle; NB - does not indicate success, rather - unrestricted access
+* these are quite different to the .au-page-alerts - no heading, border, padding or background colour
+* these alert styles were initially used in the "sapphire" redesign of profile builder
+*/
+.info-box {
+  svg {
+    color: #e17566;
+    font-size: 1.6rem;
+    @include AU-space( margin-right, 0.5unit);
+    vertical-align: middle;
+    &.fa-check-circle {
+      color: #008080;
+    }
+  }
+}
+
+
 div.cool-infobox {
   border-radius: 10px;
   padding: 1.0rem;
