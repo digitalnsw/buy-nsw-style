@@ -37,7 +37,7 @@
         <br>
       {{/unless}}
       {{dds/validation-error thin=thin type=(or errorType "error") message=errorMessage float=(or float "left")}}
-    {{else if (and showError apiError)}}
+    {{else if (and apiError (or showError hasChanged))}}
       {{dds/validation-error thin=thin type="warning" message=apiError float=(or float "left")}}
     {{/if}}
   </div>

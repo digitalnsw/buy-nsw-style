@@ -21,7 +21,7 @@
 </div>
 {{#if (and (or showError hasChanged) invalid)}}
   {{dds/validation-error type="error" message=errorMessage float="left"}}
-{{else if (and apiError showError)}}
+{{else if (and apiError (or showError hasChanged))}}
   {{dds/validation-error type="warning" message=apiError float="left"}}
 {{/if}}
 <div class="clear-both"></div>
