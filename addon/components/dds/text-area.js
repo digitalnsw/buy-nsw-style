@@ -6,7 +6,9 @@ export default Component.extend({
   actions: {
     focusOut() {
       this.set('hasChanged', true);
-      this.set('apiError', '');
+      if(this.get('apiError')) {
+        this.set('apiError', '');
+      }
       if (this.get('focusOut')) {
         this.focusOut();
       }
@@ -16,7 +18,6 @@ export default Component.extend({
     },
     keyUp() {
       this.set('hasChanged', true);
-      this.set('apiError', '');
       if (this.get('keyUp')) {
         this.keyUp();
       }
