@@ -18,14 +18,12 @@ export default Component.extend({
   },
 
   getElemDistance( elem ) {
-    let location = 0;
-    if (elem.offsetParent) {
-        do {
-            location += elem.offsetTop;
-            elem = elem.offsetParent;
-        } while (elem);
+    let result = 0;
+    while (elem && elem.offsetParent) {
+      result += elem.offsetTop;
+      elem = elem.offsetParent;
     }
-    return location >= 0 ? location : 0;
+    return result >= 0 ? result : 0;
   },
 
   animateScroll(targetPos, duration) {
