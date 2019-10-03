@@ -11,6 +11,7 @@
     class={{concat "au-btn au-btn--tertiary "
       (if wide "au-btn--wide ")
       (if thin "au-btn--thin ")
+      (if dark "au-btn--dark ")
       (if theme (concat "au-btn--tertiary--" theme))}}
     onclick={{unless disabled onClick}}
     disabled={{disabled}}
