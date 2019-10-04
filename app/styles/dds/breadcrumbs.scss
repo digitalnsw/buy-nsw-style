@@ -28,6 +28,10 @@
 		> li {
 			margin: 0; //Intentionally flush with the container, as breadcrumbs are designed to sit on a full viewport width bg.
 
+			&:first-child {
+				font-family: MontserratBold;
+			}
+
 			&:after {
 				content: ' ';
 				display: inline-block;

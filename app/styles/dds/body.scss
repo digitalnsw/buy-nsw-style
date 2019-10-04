@@ -129,7 +129,10 @@
 		margin: 0;
     &.left-space {
       margin-left: 40px;
-    }
+		}
+		&.center {
+			max-width: none;
+		}
 	}
 
 	* + p {

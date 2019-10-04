@@ -35,6 +35,7 @@
 				'<path fill="#{ $AU-color-foreground-action }" d="M128 64l-64 64-16-16 64-64"/>' +
 				'<path fill="#{ $AU-color-foreground-action }" d="M128 64l-16 16-64-64L64 0"/>' +
 			'</svg>');
+		vertical-align: middle;
 
 		.ie8 &,
 		.lt-ie8 & {

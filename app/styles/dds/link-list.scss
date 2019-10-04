@@ -4,7 +4,9 @@
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 /**
- * Block of links.
+ * list of links without bullet points
+ * 	default list is vertical
+ *	--inline variant is horizontal (side-by-side)
  */
 .au-link-list {
 	@include AU-fontgrid( sm );
@@ -19,8 +21,6 @@
 	}
 
 	> li {
-		display: block;
-    float: left;
 		@include AU-space( margin, 0.25unit );
 	}
 
