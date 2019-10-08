@@ -7,10 +7,6 @@
   top: 20px;
 }
 
-.clear-both {
-  clear: both;
-}
-
 .au-inpage-nav-links {
 	@include AU-fontgrid( sm );
 	@include AU-space( padding-left, 1.5unit );

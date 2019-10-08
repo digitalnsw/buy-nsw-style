@@ -1,7 +1,7 @@
 <div class="au-banner {{if light "au-banner--light"}} {{background}}">
   <div class="container-fluid">
     <div class="row">
-      <div class="col-sm-36">
+      <div class={{if sideContent "col-sm-20 col-md-22 col-lg-24" "col-sm-34"}}>
         <div class="au-banner__text">
           {{#if links}}
             {{dds/bread-crumbs links=links}}
@@ -14,9 +14,7 @@
           <div class="au-banner__subline">{{subline}}</div>
         </div>
       </div>
-    </div>
-    <div class="row">
-      <div class="col-sm-34">
+      <div class={{if sideContent "col-sm-16 col-md-14 col-lg-12" "col-sm-34"}}>
         {{yield}}
       </div>
     </div>

@@ -2,7 +2,7 @@ hr.less-margin {
   margin: 1.0rem 0 1.0rem 0;
 }
 
-hr.no-margin {
+hr.no-margin, div.no-margin, nav.no-margin {
   margin: 0;
 }
 
@@ -114,4 +114,14 @@ div.header-alert {
   font-size: 0.8rem;
   text-align: center;
   padding: 2px 5px;
+}
+
+.display-block {
+  display: block;
+}
+
+.clear-both {
+  content: "";
+  display: block;
+  clear: both;
 }
