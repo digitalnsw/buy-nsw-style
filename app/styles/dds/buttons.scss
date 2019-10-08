@@ -222,6 +222,11 @@ a.au-btn {
 
     &.au-btn--tertiary--sapphire {
       color: $BUY-color-action-alt-shade;
+      &.au-btn--dark {
+        color: $AU-colordark-foreground-action;
+        text-decoration: underline;
+      }
+
       text-decoration: none;
 
       // hover
