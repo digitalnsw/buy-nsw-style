@@ -54,7 +54,7 @@
   .au-banner__title {
     @include AU-fontgrid( lg );
     margin: 0;
-    padding: 0 0 1rem;
+    @include AU-space( padding, 0 0 .4unit 0);
     border-bottom: 9px solid $BUY-color-callout-border;
     font-family: MontserratBold;
     font-weight: normal;
@@ -70,8 +70,7 @@
   }
 
   .au-banner__heading {
-    padding: 0;
-    margin: 1rem 0;
+    @include AU-space( margin, 1.5unit 0 0 0);
     @include AU-fontgrid( sm );
     font-family: MontserratBold;
 
@@ -121,7 +120,7 @@
 /* sits under the banner buttons, but not within the banner; this prevents the banner's background colour from extending down past the banner buttons: */
 .dashboard-notes {
   position: relative;
-  @include AU-space( top, -1unit);
+  @include AU-space( top, -1.5unit);
   text-align: center;
   @include AU-media( md ) {
     strong {
