@@ -115,7 +115,7 @@
     @include AU-space( font-size, 1.25unit );
     // at 992px, when the 3 boxes sit side-by-side, ensure equal height
     @include AU-media( md ) {
-      min-height: 180px;
+      min-height: 200px;
     }
     a, b {
       color: $BUY-color-action-primary;
