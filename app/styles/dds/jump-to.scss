@@ -4,11 +4,12 @@
 
 .au-jump-to {
   @include AU-fontgrid( sm );
-  @include AU-space( padding, 1.5unit );
   background-color: $BUY-color-action-alt-shade;
   color: white;
   border-radius: 1rem;
-  width: 90%;
+  padding: 0;
+  margin: 0;
+  width: 100%;
   * {
     float: none;
   }
@@ -17,13 +18,22 @@
   }
 }
 .au-jump-to__trigger {
+  @include AU-space( padding, 1.5unit 2unit 1.5unit 2unit );
   font-family: MontserratBold;
-  padding: 1rem 0;
+  display: block;
 }
 .au-jump-to__links {
+  @include AU-space( padding, 1.5unit 2unit 1.5unit 2unit );
   font-family: MontserratRegular;
   font-size: 90%;
   margin: 0.5rem 0;
-  padding: 0 2rem 0 1rem;
   border: none;
+  position: absolute;
+  width: 100%;
+  background-color: inherit;
+  left: 0;
+  top: 3rem;
+  border-radius: 0 0 1rem 1rem;
+  box-sizing: border-box;
+  z-index: 1;
 }
