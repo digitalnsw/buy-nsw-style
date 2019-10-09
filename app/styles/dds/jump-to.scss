@@ -30,7 +30,7 @@
   z-index: 1;
   > li {
     border-left: 4px solid white;
-    @include AU-space( margin, 0 0 0 1.5unit );
+    @include AU-space( margin, 0 0 0 2unit );
     @include AU-space( padding, .25unit 0 .25unit 1.5unit );
   }
 }
