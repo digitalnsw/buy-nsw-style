@@ -4,21 +4,26 @@
 
 .au-jump-to {
   @include AU-fontgrid( sm );
-  @include AU-space( padding, 0.5unit 1.5unit );
+  @include AU-space( padding, 1.5unit );
   background-color: $BUY-color-action-alt-shade;
   color: white;
-  width: min(24rem, 100%);
   border-radius: 1rem;
+  width: 90%;
+  * {
+    float: none;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
 }
-.au-jump-to__label {
+.au-jump-to__trigger {
   font-family: MontserratBold;
   padding: 1rem 0;
 }
-.au-jump-to__select {
+.au-jump-to__links {
   font-family: MontserratRegular;
   font-size: 90%;
   margin: 0.5rem 0;
   padding: 0 2rem 0 1rem;
-  height:2.5rem;
   border: none;
 }
