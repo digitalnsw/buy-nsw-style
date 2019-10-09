@@ -7,33 +7,30 @@
   background-color: $BUY-color-action-alt-shade;
   color: white;
   border-radius: 1rem;
-  padding: 0;
-  margin: 0;
-  width: 100%;
-  * {
-    float: none;
-  }
-  a:hover {
+  @include AU-space( padding-bottom, 1unit );
+  position: relative;
+}
+.au-jump-to__trigger {
+  @include AU-space( padding, 1.5unit 2unit .5unit 2unit );
+  font-family: MontserratBold;
+  display: block;
+  margin-bottom: 0;
+  &:hover {
     text-decoration: underline;
   }
 }
-.au-jump-to__trigger {
-  @include AU-space( padding, 1.5unit 2unit 1.5unit 2unit );
-  font-family: MontserratBold;
-  display: block;
-}
 .au-jump-to__links {
-  @include AU-space( padding, 1.5unit 2unit 1.5unit 2unit );
+  background-color: inherit;
+  border-radius: 0 0 1rem 1rem;
   font-family: MontserratRegular;
-  font-size: 90%;
-  margin: 0.5rem 0;
-  border: none;
+  left: 0;
+  @include AU-space( padding, 1unit 0 );
   position: absolute;
   width: 100%;
-  background-color: inherit;
-  left: 0;
-  top: 3rem;
-  border-radius: 0 0 1rem 1rem;
-  box-sizing: border-box;
   z-index: 1;
+  > li {
+    border-left: 4px solid white;
+    @include AU-space( margin, 0 0 0 1.5unit );
+    @include AU-space( padding, .25unit 0 .25unit 1.5unit );
+  }
 }
