@@ -5,16 +5,15 @@
 .au-jump-to {
   @include AU-fontgrid( sm );
   background-color: $BUY-color-action-alt-shade;
+  @include AU-space( border-radius, 1unit );
   color: white;
-  border-radius: 1rem;
   @include AU-space( padding-bottom, 1unit );
   position: relative;
 }
 .au-jump-to__trigger {
-  @include AU-space( padding, 1.5unit 2unit .5unit 2unit );
   font-family: MontserratBold;
-  display: block;
   margin-bottom: 0;
+  @include AU-space( padding, 1.5unit 2unit .5unit 2unit );
   &:hover {
     text-decoration: underline;
   }

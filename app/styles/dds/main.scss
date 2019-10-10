@@ -142,13 +142,19 @@ form {
 // ### DASHBOARD ###
 // main content for dashboard pages
 // doesn't use an existing component; unlikely to be used elsewhere
+
+@include AU-media( sm ) {
+	.improve-visibility {
+		background: url("/ict/buy-nsw-style/images/searching-header.png") no-repeat right top/360px;
+		position: relative;
+	}
+}
 @include AU-media( md ) {
 	.improve-visibility {
 		background-image: url("/ict/buy-nsw-style/images/searching-header.png"), url("/ict/buy-nsw-style/images/white-square-opacity-5.svg"), url("/ict/buy-nsw-style/images/man-on-laptop.png");
 		background-repeat: no-repeat, no-repeat, no-repeat;
 		background-position: 70% bottom, right top, right top;
 		background-size: 360px, 240px, 240px;
-		position: relative;
 		h4 {
 			@include AU-space( padding-top, 2unit );
 		}

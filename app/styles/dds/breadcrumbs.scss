@@ -5,24 +5,8 @@
 
 .au-breadcrumbs {
 	@include AU-fontgrid( xs, nospace );
-	width: 100%;
-	margin: 0;
 	color: $AU-color-foreground-text;
 	font-family: $AU-font;
-
-	* + & {
-		@include AU-space( margin-top, 1unit );
-	}
-
-	@include AU-media( sm ) {
-		display: inline-block;
-	}
-
-  margin-top: 20px;
-
-  @include AU-media( sm ) {
-    margin-top: 0px;
-  }
 
 	> .au-link-list {
 		> li {

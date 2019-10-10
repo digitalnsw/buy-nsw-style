@@ -81,8 +81,10 @@
 .welcome {
   @include AU-space( margin, 2unit 0 );
   .au-simple-box {
-    // at 992px, when the 3 boxes sit side-by-side, ensure equal height
+    @include AU-space( margin-bottom, 1unit );
     @include AU-media( md ) {
+      @include AU-space( margin-bottom, 0 );
+      // at 992px, when the 3 boxes sit side-by-side, ensure equal height:
       min-height: 560px;
     }
     .img-wrap {
@@ -103,7 +105,7 @@
 * 'Make changes' section; 3 boxes side by side, each with a large Font Awesome icon
 */
 .make-changes {
-  // at 992px, when the 3 boxes sit side-by-side, show a background image
+  // at 992px, when the 3 boxes sit side-by-side, show a background image:
   @include AU-media( md ) {
     background: url("/ict/buy-nsw-style/images/user-header.png") no-repeat 90% 0/200px;
   }
@@ -113,8 +115,10 @@
   .au-simple-box {
     color: $BUY-color-action-primary;
     @include AU-space( font-size, 1.25unit );
-    // at 992px, when the 3 boxes sit side-by-side, ensure equal height
+    @include AU-space( margin-bottom, 1unit );
     @include AU-media( md ) {
+      @include AU-space( margin-bottom, 0 );
+      // at 992px, when the 3 boxes sit side-by-side, ensure equal height:
       min-height: 200px;
     }
     a, b {
