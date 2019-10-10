@@ -6,7 +6,7 @@ hr.no-margin, div.no-margin, nav.no-margin {
   margin: 0;
 }
 
-a.pointer {
+.pointer {
   cursor: pointer;
   text-decoration: none;
 }
@@ -124,4 +124,12 @@ div.header-alert {
   content: "";
   display: block;
   clear: both;
+}
+
+.no-gutters {
+  > .col,
+  > [class*="col-"] {
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+  }
 }
