@@ -55,8 +55,112 @@
         color: $BUY-color-meta-tag;
       }
     }
-	}
+  }
+  
+  &.au-simple-box--lilac {
+    background-color: $BUY-color-ui-callout;
+  }
+
+  &.au-simple-box--iceblue {
+    background-color: $BUY-color-forground-muted;
+  }
+
+  &.au-simple-box--whitesmoke {
+    background-color: $BUY-color-minimal-grey;
+  }
+
+  &.au-simple-box--lightpeach {
+    background-color: #fdf2e3;
+  }
 }
+
+/**
+* Supplier Dashboard page
+* 'Welcome' section; 3 boxes side by side, each with a full-width photo
+*/
+.welcome {
+  @include AU-space( margin, 2unit 0 );
+  .au-simple-box {
+    @include AU-space( margin-bottom, 1unit );
+    @include AU-media( md ) {
+      @include AU-space( margin-bottom, 0 );
+      // at 992px, when the 3 boxes sit side-by-side, ensure equal height:
+      min-height: 560px;
+    }
+    .img-wrap {
+      @include AU-space( margin, -3unit -3unit 1unit -3unit );
+    }
+    ul {
+      @include AU-space( padding-left, 1unit );
+      @include AU-space( margin-bottom, 1unit );
+    }
+    .au-btn {
+      @include AU-space( margin-left, 1unit );
+    }
+  }
+}
+
+/*
+* Supplier Dashboard page
+* 'Make changes' section; 3 boxes side by side, each with a large Font Awesome icon
+*/
+.make-changes {
+  // at 992px, when the 3 boxes sit side-by-side, show a background image:
+  @include AU-media( md ) {
+    background: url("/ict/buy-nsw-style/images/user-header.png") no-repeat 90% 0/200px;
+  }
+  > h4 {
+    @include AU-space( padding, 4.5unit 0 1.5unit 0 );
+  }
+  .au-simple-box {
+    color: $BUY-color-action-primary;
+    @include AU-space( font-size, 1.25unit );
+    @include AU-space( margin-bottom, 1unit );
+    @include AU-media( md ) {
+      @include AU-space( margin-bottom, 0 );
+      // at 992px, when the 3 boxes sit side-by-side, ensure equal height:
+      min-height: 200px;
+    }
+    a, b {
+      color: $BUY-color-action-primary;
+    }
+    svg {
+      @include AU-space( font-size, 6unit );
+      // note - <br> tag creates too much space, so set here instead:
+      @include AU-space( margin-bottom, 1unit );
+      &.fa-cogs {
+        color: #5a6fbf;
+      }
+      &.fa-user-circle {
+        color: #f1c2af;
+      }
+      &.fa-edit {
+        color: #9396d3;
+      }
+    }
+  }
+}
+
+/**
+* a simple info/notification style
+* an info-circle icon - an "i" in a dark peach circle, sits in front of a single text string
+* the check-circle variant uses a tick in a green circle; NB - does not indicate success, rather - unrestricted access
+* these are quite different to .au-page-alerts and .au-simple-box - no heading, border, padding or background colour
+* these alert styles were initially used in the "sapphire" redesign of profile builder
+*/
+.info-box {
+  svg {
+    color: $BUY-color-warning-shade;
+    @include AU-space( font-size, 1.6unit );
+    @include AU-space( margin-right, 0.5unit);
+    vertical-align: middle;
+    &.fa-check-circle {
+      color: $BUY-color-meta-tag;
+    }
+  }
+}
+
+
 div.cool-infobox {
   border-radius: 10px;
   padding: 1.0rem;
@@ -81,6 +185,7 @@ div.cool-infobox {
     .svg-inline--fa {
       color: $BUY-color-action-alt-shade;
     }
+    padding: 1.6rem 2rem;
   }
   > span {
     padding: 1.0rem 0.5rem;

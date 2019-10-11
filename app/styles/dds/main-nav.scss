@@ -64,6 +64,7 @@ $AU-main-nav-z-index: 200 !default;
 		padding: 0;
 
 		li {
+			float: left;
 			margin: 0;
 		}
 	}
@@ -139,12 +140,6 @@ $AU-main-nav-z-index: 200 !default;
 	}
 
 	@include AU-media( $AU-main-nav-breakpoint ) {
-		.au-link-list > li {
-			display: block;
-			float: left;
-			border: none;
-		}
-
 		a,
 		.au-main-nav__toggle {
 			@include AU-fontgrid( sm );

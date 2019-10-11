@@ -51,22 +51,20 @@
 /**
  * Footer `nav` navigation styling.
  */
-.au-footer__navigation {
 
+.au-footer__start {
+	@include AU-space( padding-left, 1unit );
 	.au-link-list {
-		> li {
-			margin-left: 0;
-		}
+		@include AU-space( margin, 1unit 0 2unit 0 );
 	}
 }
 
-
 .au-footer__end {
+	@include AU-space( padding-left, 1unit );
 	@include AU-space( padding-top, 1unit );
 	@include AU-space( margin-top, 1unit );
 	border-top: 1px solid $AU-color-foreground-border;
 }
-
 
 .au-footer--dark .au-footer__end {
 	border-top: 1px solid $AU-colordark-foreground-border;

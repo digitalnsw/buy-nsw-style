@@ -1,9 +1,13 @@
-{{#each documents as |doc|}}
-  <p>
-    <a target="_blank" rel="noopener" class="au-cta-link small" href={{doc.url}}>
-      {{if showOriginalFilename doc.original_filename "Download file"}}
-    </a>
-    {{doc.extension}},
-    {{number-to-human-size doc.size}}
-  </p>
-{{/each}}
+<ul>
+  {{#each documents as |doc|}}
+    <li>
+      <a target="_blank" rel="noopener" class={{concat "au-cta-link small"
+        (if dark " au-cta-link--dark")
+      }} href={{doc.url}}>
+        {{if label label doc.original_filename}}
+      </a>
+      {{doc.extension}},
+      {{number-to-human-size doc.size}}
+    </li>
+  {{/each}}
+</ul>

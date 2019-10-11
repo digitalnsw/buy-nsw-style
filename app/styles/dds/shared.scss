@@ -2,11 +2,11 @@ hr.less-margin {
   margin: 1.0rem 0 1.0rem 0;
 }
 
-hr.no-margin {
+hr.no-margin, div.no-margin, nav.no-margin {
   margin: 0;
 }
 
-a.pointer {
+.pointer {
   cursor: pointer;
   text-decoration: none;
 }
@@ -23,6 +23,9 @@ div.pull-left, span.pull-left {
 a.pull-right, span.pull-right, div.pull-right {
   margin-right: 1rem;
   float: right;
+  &.no-margin-right {
+    margin-right: 0;
+  }
 }
 
 div.float-right, span.float-right, a.float-right, b.float-right, p.float-right {
@@ -111,4 +114,22 @@ div.header-alert {
   font-size: 0.8rem;
   text-align: center;
   padding: 2px 5px;
+}
+
+.display-block {
+  display: block;
+}
+
+.clear-both {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.no-gutters {
+  > .col,
+  > [class*="col-"] {
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+  }
 }

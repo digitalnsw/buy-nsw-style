@@ -4,21 +4,32 @@
 
 .au-jump-to {
   @include AU-fontgrid( sm );
-  @include AU-space( padding, 0.5unit 1.5unit );
   background-color: $BUY-color-action-alt-shade;
+  @include AU-space( border-radius, 1unit );
   color: white;
-  width: min(24rem, 100%);
-  border-radius: 1rem;
+  @include AU-space( padding-bottom, 1unit );
+  position: relative;
 }
-.au-jump-to__label {
+.au-jump-to__trigger {
   font-family: MontserratBold;
-  padding: 1rem 0;
+  margin-bottom: 0;
+  @include AU-space( padding, 1.5unit 2unit .5unit 2unit );
+  &:hover {
+    text-decoration: underline;
+  }
 }
-.au-jump-to__select {
+.au-jump-to__links {
+  background-color: inherit;
+  border-radius: 0 0 1rem 1rem;
   font-family: MontserratRegular;
-  font-size: 90%;
-  margin: 0.5rem 0;
-  padding: 0 2rem 0 1rem;
-  height:2.5rem;
-  border: none;
+  left: 0;
+  @include AU-space( padding, 1unit 0 );
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+  > li {
+    border-left: 4px solid white;
+    @include AU-space( margin, 0 0 0 2unit );
+    @include AU-space( padding, .25unit 0 .25unit 1.5unit );
+  }
 }

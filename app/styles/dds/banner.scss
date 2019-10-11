@@ -19,24 +19,33 @@
 		@include AU-fontgrid( md );
 	}
 
-  @include AU-space( padding, 2unit 0 1unit 0);
-
   .banner-button {
+    display: block;
     font-family: MontserratBold;
-    text-align: center;
-    margin-right: 1rem;
-    width: 13rem;
-    max-width: 37%;
-    padding: 0.5rem;
     box-shadow: 5px 5px 5px gray;
-    &:active {
-      border-radius: .4rem;
-    }
     border-radius: .4rem;
+    @include AU-space( padding, .5unit 4unit);
+    text-align: center;
+    &.tally {
+      background: #fff;
+      border: 3px solid #d7d7d7;
+      @include AU-fontgrid( sm );
+      padding: 0;
+      > span {
+        box-sizing: border-box;
+        float: left;
+        @include AU-space( padding, .5unit 4unit );
+        width: 50%;
+        &:first-of-type {
+          border-right: 3px solid #d7d7d7;
+        }
+      }
+      @include AU-clearfix();
+    }
   }
 
   .au-breadcrumbs {
-    margin-bottom: 2rem;
+    @include AU-space( margin-bottom, 1.5unit);
   }
 
   /**
@@ -45,19 +54,23 @@
   .au-banner__title {
     @include AU-fontgrid( lg );
     margin: 0;
-    padding: 0 0 1rem;
+    @include AU-space( padding, 0 0 .4unit 0);
     border-bottom: 9px solid $BUY-color-callout-border;
-    font-family: MontserratRegular;
+    font-family: MontserratBold;
+    font-weight: normal;
 
     @include AU-media( sm ) {
       @include AU-fontgrid( xxl );
     }
     display: inline-block;
+    
+    &.dashboard {
+      @include AU-space( margin, 4unit 0 2.5unit 0 );
+    }
   }
 
   .au-banner__heading {
-    padding: 0;
-    margin: 1rem 0;
+    @include AU-space( margin, 1.5unit 0 0 0);
     @include AU-fontgrid( sm );
     font-family: MontserratBold;
 
@@ -87,16 +100,42 @@
     a {
       color: $BUY-color-foreground-text;
     }
-    .au-banner__heading {
-    }
-	}
+  }
 
-  &.editting {
+  .container-fluid {
+    @include AU-space( padding-top, 2unit);
+    @include AU-space( padding-bottom, 1unit);
+  }
+
+  .editing {
     @include AU-media( sm ) {
-      background-image: url("/ict/buy-nsw-style/images/editting-header.png");
+      background-image: url("/ict/buy-nsw-style/images/editing-header.png");
       background-repeat: no-repeat;
-      background-position: 90%;
-      background-size: contain;
+      background-position: 100% 0;
+      background-size: 360px;
+    }
+  }
+}
+
+/* sits under the banner buttons, but not within the banner; this prevents the banner's background colour from extending down past the banner buttons: */
+.dashboard-notes {
+  position: relative;
+  @include AU-space( top, -1.5unit);
+  text-align: center;
+  @include AU-media( md ) {
+    strong {
+      display: block;
+    }
+  }
+}
+
+/* On screens that are 992px or less, shift the .editing background-image to prevent overlap with text */
+@media screen and (max-width: 992px) {
+  .au-banner {
+    .editing {
+      @include AU-media( sm ) {
+        background-position: 100% 0;
+      }
     }
   }
 }

@@ -1,27 +1,14 @@
-<div class="au-jump-to">
-  <div class="container-fluid no-padding">
-    <div class="row">
-      <div class="col-xs-14 col-sm-12 col-md-11">
-        <div class="au-jump-to__label">
-          Jump to:
-        </div>
-      </div>
-      <div class="col-xs-22 col-sm-24 col-md-25">
-        <select
-          class="au-select au-select--block au-jump-to__select"
-          onChange={{action "onChange" value="target.value"}}
-        >
-          <option
-            selected="selected"
-            value=""
-          >
-            Please select
-          </option>
-          {{#each sections as |item|}}
-            <option value={{item.anchor}}>{{item.name}}</option>
-          {{/each}}
-        </select>
-      </div>
-    </div>
-  </div>
-</div>
+<h4 class="au-jump-to__trigger pointer" onclick={{action "onToggle"}}>
+  On this page: <small>(click to open)</small>
+</h4>
+{{#if isOpen}}
+  <ul class="au-link-list au-jump-to__links">
+    {{#each sections as |item|}}
+      {{#unless item.hide}}
+        <li>
+          {{scroll-to label=item.name onScroll=(action "onClose") target=(concat "#" item.anchor) tagName="a" duration=300 classNames="pointer"}}
+        </li>
+      {{/unless}}
+    {{/each}}
+  </ul>
+{{/if}}

@@ -34,5 +34,5 @@
 {{#if (and (or showError hasChanged) invalid)}}
   {{dds/validation-error type="error" message=errorMessage float="right"}}
 {{else if (and apiError (or showError hasChanged))}}
-  {{dds/validation-error type=apiError float="right"}}
+  {{dds/validation-error type="warning" message=apiError float="right"}}
 {{/if}}
