@@ -3,6 +3,7 @@ import layout from '../../templates/components/dds/text-input';
 
 export default Component.extend({
   layout,
+  classNames: ['row'],
   actions: {
     keyUp() {
       if(this.get('apiError')) {
