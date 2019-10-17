@@ -1,29 +1,37 @@
-<h4 class="pointer" onclick={{action "onToggle"}}>
-  {{ currentPath }} My key pages &raquo;
-</h4>
-{{#if isOpen}}
-  <ul class="au-link-list">
-    <li class={{if (eq currentPath "supplier-application") "active"}}>
-      {{ link-to "Account settings" "supplier-application" }}
-    </li>
-    <li class={{if (eq currentPath "profile-builder") "active"}}>
-      {{ link-to "Profile builder" "profile-builder" }}
-    </li>
-    {{# if auth.isSeller }}
-      <li class={{if (eq currentPath "seller-dashboard") "active"}}>
-        {{ link-to "Dashboard" "seller-dashboard" }}
+{{# if auth.user }}
+  <h4 class="pointer" onclick={{action "onToggle"}}>
+    {{#if (eq currentPath "supplier-application")}}
+      Account settings
+    {{else if (or (eq currentPath "seller-dashboard") (eq currentPath "buyer-dashboard")) }}
+      Dashboard
+    {{else if (eq currentPath "profile-builder")}}
+      Profile builder
+    {{else}}
+      My key pages<!-- {{currentPath}} {{currentRouteName}}-->
+    {{/if }}
+  </h4>
+  {{#if isOpen}}
+    <ul class="au-link-list">
+      <li class={{if (eq currentPath "supplier-application") "active"}}>
+        {{ link-to "Account settings" "supplier-application" }}
       </li>
-    {{else if auth.isBuyer }}
-      <li class={{if (eq currentPath "buyer-dashboard") "active"}}>
-        {{ link-to "Dashboard" "buyer-dashboard" }}
+      <li>
+        {{ link-to "Profile builder" "profile-builder" }}
       </li>
-    {{/ if }}
-    <li >
-      {{# if auth.user }}
-        <a onClick={{action "logout"}}>Sign out</a>
-      {{ else }}
-        {{ link-to "Log in or sign up" "sign-in" }}
+      {{# if auth.isSeller }}
+        <li class={{if (eq currentPath "seller-dashboard") "active"}}>
+          {{ link-to "Dashboard" "seller-dashboard" }}
+        </li>
+      {{else if auth.isBuyer }}
+        <li class={{if (eq currentPath "buyer-dashboard") "active"}}>
+          {{ link-to "Dashboard" "buyer-dashboard" }}
+        </li>
       {{/ if }}
-    </li>
-  </ul>
-{{/if}}
+      <li >
+        <button class="au-btn au-btn--tertiary" onclick={{action "logout"}}>Sign out</button>
+      </li>
+    </ul>
+  {{/if}}
+{{ else }}
+  {{ link-to "Log in or sign up" "sign-in" }}
+{{/ if }}

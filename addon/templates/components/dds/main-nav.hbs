@@ -10,11 +10,11 @@
       {{ link-to "Help" "help-page" }}
     </li>
     {{# if auth.isSeller }}
-      <li class={{if (eq currentPath "seller-dashboard") "active"}}>
+      <li class={{if (eq currentPath "seller-dashboard") "dashboard-link active" "dashboard-link"}}>
         {{ link-to "Dashboard" "seller-dashboard" }}
       </li>
     {{else if auth.isBuyer }}
-      <li class={{if (eq currentPath "buyer-dashboard") "active"}}>
+      <li class={{if (eq currentPath "buyer-dashboard") "dashboard-link active" "dashboard-link"}}>
         {{ link-to "Dashboard" "buyer-dashboard" }}
       </li>
     {{/ if }}

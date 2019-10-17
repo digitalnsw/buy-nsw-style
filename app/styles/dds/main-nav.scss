@@ -158,6 +158,13 @@ $AU-main-nav-z-index: 200 !default;
   }
 }
 
+// hide duplicate link from mobile screens (< 576px), so that main nav doesnt wrap to a 2nd line:
+@media (max-width: $AU-media-xs) {
+  .dashboard-link {
+    @include AU-sronly();
+  }
+}
+
 
 // The open and close toggles
 .au-main-nav__toggle {

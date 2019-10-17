@@ -5,7 +5,7 @@
 // NB: key differences in regard to Jump to module - not an in-page nav, no scroll-to action
 //---------------
 
-.au-drop-down {
+.drop-down {
   @include AU-fontgrid( sm );
   background-color: white;
   float: right;
@@ -15,7 +15,7 @@
   text-decoration: none;
   h4 {
     color: $AU-color-foreground-action;
-    margin-bottom: 0;
+    margin: 0;
   }
   ul {
     background-color: inherit;
