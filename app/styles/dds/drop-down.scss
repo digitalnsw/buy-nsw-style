@@ -16,6 +16,10 @@
   h4 {
     color: $AU-color-foreground-action;
     margin: 0;
+    > svg {
+      @include AU-space( margin-left, .3unit );
+      vertical-align: middle;
+    }
   }
   ul {
     background-color: inherit;
@@ -27,10 +31,14 @@
     > li {
       border: 1px solid white;
       color: $AU-color-foreground-action;
-      @include AU-space( margin, 0 );
+      margin: 0;
       @include AU-space( padding, .25unit 0 0 .5unit );
       > a {
         color: $AU-color-foreground-action;
+      }
+      > .au-btn {
+        border: 0;
+        padding: 0;
       }
     }
   }
