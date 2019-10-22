@@ -3,6 +3,8 @@ import layout from '../../templates/components/dds/progress-indicator';
 
 export default Component.extend({
   layout,
+  tagName: 'ul',
+  classNames: ['au-progress-indicator'],
   activeMenu: null,
   didReceiveAttrs() {
     this._super(...arguments);
