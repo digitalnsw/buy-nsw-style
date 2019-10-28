@@ -1,38 +1,39 @@
 <div class="container-fluid">
-  <div class="au-footer__start row">
-    <nav class="col-sm-12">
-      <h4 class="au-display-lg">About buy.nsw</h4>
+  <div class="row">
+    <section class="col-sm-12">
+      <h4 class="au-display-lg">For general enquiries and help</h4>
       <ul class="au-link-list">
-        <li>{{ link-to "About the program" "about-page" }}</li>
-        <li><a href="https://www.digital.nsw.gov.au/blog" target="_blank" rel="noopener">Digital NSW blog</a></li>
-        <li><a href="https://github.com/digitalnsw/buy-nsw" target="_blank" rel="noopener">Source Code</a></li>
+        <li><a href="mailto:buy.nsw@customerservice.nsw.gov.au" class="icon-wrap"><span class="icon-circle">{{fa-icon "envelope" prefix="fas"}}</span> buy.nsw@customerservice.nsw.gov.au</a></li>
+      </ul>
+      <p class="au-display-sm">We pay respect to the Traditional Custodians and First Peoples of NSW and acknowledge their continued connection to their country and cultures.</p>
+    </section>
+    <nav class="col-sm-18 col-sm-offset-6">
+      <h4 class="au-display-lg">buy.nsw services and platforms</h4>
+      <ul class="au-link-list cols-2">
+        <li><a href="https://beta.buy.nsw.gov.au/policy-library" target="_blank" rel="noopener">Policy library</a> <span class="beta">Beta</span></li>
+        <li><a href="/ict/">Supplier hub</a></li>
+        <li><a href="https://www.procurepoint.nsw.gov.au/" target="_blank" rel="noopener">ProcurePoint {{fa-icon "external-link" prefix="far"}}</a></li>
+        <li><a href="https://tenders.nsw.gov.au/" target="_blank" rel="noopener">eTendering {{fa-icon "external-link" prefix="far"}}</a></li>
+        <li><a href="https://tenders.nsw.gov.au/?event=admin.login" target="_blank" rel="noopener">eQuote {{fa-icon "external-link" prefix="far"}}</a></li>
+        <li><a href="https://catalogues.buy.nsw.gov.au" target="_blank" rel="noopener">eCatalogue {{fa-icon "external-link" prefix="far"}}</a></li>
+        <li><a href="https://supplierdata.buy.nsw.gov.au/PCM/login.load.do" target="_blank" rel="noopener">Supplier Data Portal {{fa-icon "external-link" prefix="far"}}</a></li>
+        <li><a href="https://www.majorsuppliersportal.nsw.gov.au/login" target="_blank" rel="noopener">Major Suppliers' Portal {{fa-icon "external-link" prefix="far"}}</a></li>
       </ul>
     </nav>
-    <nav class="col-sm-12">
-      <h4 class="au-display-lg">Guidance</h4>
-      <ul class="au-link-list">
-        <li>{{ link-to "Buyer guide" "buyer-guide" }}</li>
-        <li>{{ link-to "Supplier guide" "seller-guide" }}</li>
-        <li><a href="https://www.procurepoint.nsw.gov.au/" target="_blank" rel="noopener">ProcurePoint</a></li>
-      </ul>
-    </nav>
-    <nav class="col-sm-12">
-      <h4 class="au-display-lg">Help</h4>
-      <ul class="au-link-list">
-        <li>{{ link-to "Contact us" "contact" }}</li>
-      </ul>
-    </nav>
-  </div>    
+  </div>
 
-  <nav class="au-footer__end">
-    <ul class="au-link-list au-link-list--inline">
+  <nav class="au-footer__end row">
+    <div class="col-sm-18 social">
+      <h4>Follow us</h4>
+      Facebook Twitter
+    </div>
+    <ul class="col-sm-18 au-link-list cols-2">
+      <li>{{ link-to "About us" "about-page" }}</li>
+      <li>{{ link-to "Contact" "contact" }}</li>
+      <li>{{ link-to "Terms of use" "terms-of-use" }}</li>
       <li>{{ link-to "Privacy statement" "privacy" }}</li>
-      <li>{{ link-to "Terms and conditions" "terms-of-use" }}</li>
       <li>{{ link-to "Accessibility statement" "accessibility" }}</li>
       <li>{{ link-to "License and attribution" "license" }}</li>
-    </ul>
-    <ul class="au-link-list">
-      <li>Built by <a href="https://www.customerservice.nsw.gov.au" target="_blank" rel="noopener">Department of Customer Service</a></li>
     </ul>
   </nav>
 

@@ -32,19 +32,19 @@
 		color: $AU-colordark-foreground-text;
 		border-color: $AU-colordark-foreground-border;
 		background-color: #313131;
-    padding: 1rem 0 2rem;
+		padding: 1rem 0 2rem;
 	}
 
 	&.au-footer--dark.au-footer--alt {
 		background-color:  $AU-colordark-background-alt;
 	}
 
-  a {
-    text-decoration: none;
-    &:hover {
-      text-decoration: underline;
-    }
-  }
+	a {
+		text-decoration: none;
+		&:hover {
+			text-decoration: underline;
+		}
+	}
 }
 
 
@@ -52,15 +52,8 @@
  * Footer `nav` navigation styling.
  */
 
-.au-footer__start {
-	@include AU-space( padding-left, 1unit );
-	.au-link-list {
-		@include AU-space( margin, 1unit 0 2unit 0 );
-	}
-}
-
 .au-footer__end {
-	@include AU-space( padding-left, 1unit );
+	//@include AU-space( padding-left, 1unit );
 	@include AU-space( padding-top, 1unit );
 	@include AU-space( margin-top, 1unit );
 	border-top: 1px solid $AU-color-foreground-border;
@@ -68,4 +61,57 @@
 
 .au-footer--dark .au-footer__end {
 	border-top: 1px solid $AU-colordark-foreground-border;
+}
+
+// for any list divided into 2 columns; note - supported in IE10+
+.cols-2 {
+	column-count: 2;
+	@include AU-space( column-gap, 2unit );
+}
+
+// a 'beta' icon for any link; note - placed on right
+.beta {
+	background-color: $BUY-color-warning-shade; //#ff7f2f
+	border-radius: 999px;
+	color: #fff;
+	display: inline-block;
+	@include AU-space( font-size, 0.75unit );
+	font-weight: 500;
+	@include AU-space( line-height, 0.8125unit );
+	@include AU-space( margin, 0.3125unit );
+	@include AU-space( padding, 0.1875unit 0.625unit );
+	text-transform: uppercase;
+}
+
+// parent of svg icons with circular background
+.icon-wrap {
+	display: flex;
+	align-items: center;
+}
+// a circular background for svg icons
+.icon-circle {
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-ms-flex-flow: row wrap;
+	flex-flow: row wrap;
+	-webkit-box-pack: center;
+	-ms-flex-line-pack: center;
+	align-content: center;
+	-webkit-box-align: center;
+	-ms-flex-pack: center;
+
+	border-radius: 999px;
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-ms-flex-align: center;
+	align-items: center;
+	@include AU-space( width, 2.125unit );
+	@include AU-space( height, 2.125unit );
+	background-color: #002664;
+	@include AU-space( margin, 0 1unit 0 0 );
+	svg > path {
+		fill: white;
+	}
 }
