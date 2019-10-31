@@ -125,11 +125,3 @@ div.header-alert {
   display: block;
   clear: both;
 }
-
-.no-gutters {
-  > .col,
-  > [class*="col-"] {
-    padding-right: 0 !important;
-    padding-left: 0 !important;
-  }
-}
