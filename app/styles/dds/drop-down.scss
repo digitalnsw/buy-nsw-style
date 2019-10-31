@@ -43,3 +43,10 @@
     }
   }
 }
+
+// hide duplicate link from mobile view (< 576px), so that main nav doesnt wrap to a 2nd line:
+@media (max-width: $AU-media-xs) {
+  .dashboard-link {
+    @include AU-sronly();
+  }
+}
