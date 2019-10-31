@@ -1,13 +1,13 @@
 {{# if auth.user }}
   <h4 class="pointer" onclick={{action "onToggle"}}>
-    {{#if (eq currentPath "supplier-application")}}
+    {{#if (eq currentPath "supplier-account")}}
       Account settings
     {{else if (or (eq currentPath "seller-dashboard") (eq currentPath "buyer-dashboard")) }}
       Dashboard
     {{else if (eq currentPath "profile-builder")}}
       Profile builder
     {{else}}
-      My key pages<!-- {{currentPath}} {{currentRouteName}}-->
+      My key pages
     {{/if }}
     {{#if isOpen}}
       {{fa-icon "chevron-up" prefix="fas"}}
@@ -17,8 +17,8 @@
   </h4>
   {{#if isOpen}}
     <ul class="au-link-list">
-      <li class={{if (eq currentPath "supplier-application") "active"}}>
-        {{ link-to "Account settings" "supplier-application" }}
+      <li class={{if (eq currentPath "supplier-account") "active"}}>
+        {{ link-to "Account settings" "supplier-account" }}
       </li>
       <li>
         {{ link-to "Profile builder" "profile-builder" }}
