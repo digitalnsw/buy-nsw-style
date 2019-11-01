@@ -9,6 +9,7 @@
   @include AU-fontgrid( sm );
   background-color: white;
   float: right;
+	@include AU-space( min-width, 7.5unit );
   @include AU-space( padding, .4unit 1.2unit );
   position: relative;
   @include AU-space( margin, 1.6unit .8unit 0 0 );
@@ -37,10 +38,10 @@
       > a {
         color: $AU-color-foreground-action;
       }
-      > .au-btn {
-        border: 0;
-        padding: 0;
-      }
     }
+  }
+  .au-btn {
+    border: 0;
+    padding: 0;
   }
 }

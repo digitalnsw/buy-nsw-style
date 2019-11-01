@@ -1,37 +1,37 @@
 {{# if auth.user }}
-  <h4 class="pointer" onclick={{action "onToggle"}}>
-    {{#if dropDownSelect}}
-      {{ dropDownSelect }}
-    {{else}}
-      Key pages
-    {{/if}}
+  {{#if dropDownSelect}}
+    <h4 class="pointer" onclick={{action "onToggle"}}>
+        {{ dropDownSelect }}
+      {{#if isOpen}}
+        {{fa-icon "chevron-up" prefix="fas"}}
+      {{else}}
+        {{fa-icon "chevron-down" prefix="fas"}}
+      {{/if}}
+    </h4>
     {{#if isOpen}}
-      {{fa-icon "chevron-up" prefix="fas"}}
-    {{else}}
-      {{fa-icon "chevron-down" prefix="fas"}}
+      <ul class="au-link-list">
+        <li>
+          {{ link-to "Account settings" "seller-guide" }} <!-- temp text; NB - change to new page: supplier-account-->
+        </li>
+        <li>
+          {{ link-to "Profile builder" "profile-builder" }}
+        </li>
+        {{# if auth.isSeller }}
+          <li>
+            {{ link-to "Dashboard" "seller-dashboard" }}
+          </li>
+        {{else if auth.isBuyer }}
+          <li>
+            {{ link-to "Dashboard" "buyer-dashboard" }}
+          </li>
+        {{/ if }}
+        <li >
+          <button class="au-btn au-btn--tertiary" onclick={{action "logout"}}>Sign out</button>
+        </li>
+      </ul>
     {{/if}}
-  </h4>
-  {{#if isOpen}}
-    <ul class="au-link-list">
-      <li>
-        {{ link-to "Account settings" "seller-guide" }} <!-- temp text; NB - change to new page: supplier-account-->
-      </li>
-      <li>
-        {{ link-to "Profile builder" "profile-builder" }}
-      </li>
-      {{# if auth.isSeller }}
-        <li>
-          {{ link-to "Dashboard" "seller-dashboard" }}
-        </li>
-      {{else if auth.isBuyer }}
-        <li>
-          {{ link-to "Dashboard" "buyer-dashboard" }}
-        </li>
-      {{/ if }}
-      <li >
-        <button class="au-btn au-btn--tertiary" onclick={{action "logout"}}>Sign out</button>
-      </li>
-    </ul>
+  {{else}}
+    <button class="au-btn au-btn--tertiary" onclick={{action "logout"}}>Sign out</button>
   {{/if}}
 {{ else }}
   {{ link-to "Log in or sign up" "sign-in" }}
