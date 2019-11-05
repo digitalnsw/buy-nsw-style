@@ -48,8 +48,8 @@ $AU-main-nav-z-index: 200 !default;
 		display: block;
 	}
 
-
-	.active a {
+	// indicate current item in main nav:
+	[aria-current=page] a {
 		color: $AU-color-foreground-text;
 
 		&:hover {

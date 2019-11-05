@@ -10,21 +10,11 @@
     </h4>
     {{#if isOpen}}
       <ul class="au-link-list">
-        <li>
-          {{ link-to "Account settings" "seller-guide" }} <!-- temp text; NB - change to new page: supplier-account-->
-        </li>
-        <li>
-          {{ link-to "Profile builder" "profile-builder" }}
-        </li>
-        {{# if auth.isSeller }}
+        {{#each droplinks as |droplink|}}
           <li>
-            {{ link-to "Dashboard" "seller-dashboard" }}
+            {{link-to droplink.name droplink.route}}
           </li>
-        {{else if auth.isBuyer }}
-          <li>
-            {{ link-to "Dashboard" "buyer-dashboard" }}
-          </li>
-        {{/ if }}
+        {{/each}}
         <li >
           <button class="au-btn au-btn--tertiary" onclick={{action "logout"}}>Sign out</button>
         </li>

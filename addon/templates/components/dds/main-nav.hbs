@@ -1,25 +1,22 @@
 <div class="container-fluid" id="top">
   <ul class="au-main-nav__menu au-link-list" id="mainmenu">
-    <li class={{if (eq currentPath "cloud-sellers") "active"}}>
-      {{ link-to "Supplier list" "cloud-sellers" }}
-    </li>
-    <li class={{if (eq currentPath "cloud-search") "active"}}>
-      {{ link-to "Cloud products" "cloud-search" "all" }}
-    </li>
-    <li class={{if (eq currentPath "help-page") "active"}}>
-      {{ link-to "Help" "help-page" }}
-    </li>
-    {{# if auth.isSeller }}
-      <li class={{if (eq currentPath "seller-dashboard") "dashboard-link active" "dashboard-link"}}>
-        {{ link-to "Dashboard" "seller-dashboard" }}
+    {{#each this.mainlinks as |mainlink|}}
+      <li class={{if (eq mainlink.name "Dashboard") "dashboard-link"}} aria-current={{if (eq currentPath mainlink.route) "page"}}>
+        {{#if mainlink.param}}
+          {{link-to mainlink.name mainlink.route mainlink.param}} 
+        {{else if (eq mainlink.name "Dashboard")}}
+          {{#if auth.isSeller }}
+            {{link-to "Dashboard" "seller-dashboard"}}
+          {{else if auth.isBuyer }}
+            {{link-to "Dashboard" "buyer-dashboard"}}
+          {{/if}}
+        {{else}}
+          {{link-to mainlink.name mainlink.route}}
+        {{/if}}
       </li>
-    {{else if auth.isBuyer }}
-      <li class={{if (eq currentPath "buyer-dashboard") "dashboard-link active" "dashboard-link"}}>
-        {{ link-to "Dashboard" "buyer-dashboard" }}
-      </li>
-    {{/ if }}
-    {{# if auth.isAdmin }}
+    {{/each}}
+    {{#if auth.isAdmin }}
       <li><a href="/ops">Admin</a></li>
-    {{/ if }}
+    {{/if}}
   </ul>
 </div>
