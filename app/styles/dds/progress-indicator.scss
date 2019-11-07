@@ -347,6 +347,10 @@ a.au-progress-indicator__sub-item {
 				width: 1.1rem;
 			}
 		}
+		&.active {
+			background-color: grey;
+			font-family: MontserratRegular;
+		}
 	}
 	.au-progress-indicator__status {
 		display: none;

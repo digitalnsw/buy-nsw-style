@@ -199,3 +199,25 @@ input[type=date]:after {
     padding: 0.25rem;
   }
 }
+
+/**
+ * simple form layout - label above input; label - blue & input - 1px border
+ */
+ .simple-form {
+  h3 {
+	  @include AU-space( margin-bottom, 1unit );
+  }
+}
+.simple-form__wrap {
+  @include AU-space( margin-bottom, .5unit);
+  input {
+    @include AU-fontgrid( sm, nospace ); // using default to make sure we don’t crop descenders and ascenders
+    min-width: 250px;
+	  @include AU-space( padding, 0.25unit .5unit );
+  }
+	label {
+    color: $BUY-color-label-shade;
+    display: block;
+    font-weight: 600;
+	}
+}
