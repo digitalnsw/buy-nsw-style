@@ -9,7 +9,7 @@
           )
         }}
           <span class="au-progress-indicator__status">
-            {{if item.optional "Optional" (humanize item.status)}}
+            {{if item.optional "Optional" (if (eq item.status 'todo') 'To do' (humanize item.status))}}
           </span>
           {{item.title}}
         {{/link-to}}
