@@ -1,13 +1,17 @@
 <div class="au-avatar">
   {{#if (not imgSrc)}}
-    <p>
       {{dds/avatar avatarId=field fileService=fileService}}
       {{#file-upload name=(concat elementId "-avatar-file") accept=(array "image/jpeg" "image/png") onfileadd=(action "filePicked")}}
         <span class="au-btn au-btn--primary au-btn--thin au-btn--sapphire pointer">
           Browse photo
         </span>
       {{/file-upload}}
-    </p>
+      {{dds/secondary-button
+        thin=true
+        theme="sapphire"
+        onClick=(action "remove")
+        label="Remove photo"
+      }}
   {{else}}
     <p>
       <div class="cropper-container">

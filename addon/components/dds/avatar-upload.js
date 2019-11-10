@@ -62,6 +62,10 @@ export default Component.extend({
       file.readAsDataURL().then((result) => {
         component.set('imgSrc', result);
       })
+    },
+    remove() {
+      let component = this;
+      component.set('imgSrc', null);
     }
   }
 });
