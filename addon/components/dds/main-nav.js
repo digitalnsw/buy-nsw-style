@@ -14,7 +14,7 @@ export default Component.extend({
     return [
       {
         label: "Supplier list",
-        route: "cloud-sellers`",
+        route: "cloud-sellers",
       },
       {
         label: "Cloud products",
