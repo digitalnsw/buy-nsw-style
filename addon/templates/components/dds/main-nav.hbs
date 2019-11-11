@@ -5,7 +5,11 @@
       <ul class="au-link-list" id="mainmenu">
         {{#each items as |item|}}
           <li class={{if (eq auth.currentRouteName item.route) "active"}}>
-            {{ link-to item.label item.route item.param }}
+            {{#if item.param}}
+              {{ link-to item.label item.route item.param }}
+            {{else}}
+              {{ link-to item.label item.route }}
+            {{/if}}
           </li>
         {{/each}}
         {{# if auth.isAdmin }}
