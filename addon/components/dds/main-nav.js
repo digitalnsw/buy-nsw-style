@@ -1,6 +1,6 @@
 import Component from '@ember/component';
 import layout from '../../templates/components/dds/main-nav';
-import { components } from '@ember/object';
+import { computed } from '@ember/object';
 
 export default Component.extend({
   layout,
