@@ -64,8 +64,10 @@ export default Component.extend({
       })
     },
     remove() {
-      let component = this;
-      component.set('imgSrc', null);
+      this.set('field', null);
+      if(this.get('signal') != undefined) {
+        this.incrementProperty('signal');
+      }
     }
   }
 });

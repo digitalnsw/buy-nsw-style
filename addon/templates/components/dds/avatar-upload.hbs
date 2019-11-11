@@ -6,12 +6,15 @@
           Browse photo
         </span>
       {{/file-upload}}
-      {{dds/secondary-button
-        thin=true
-        theme="sapphire"
-        onClick=(action "remove")
-        label="Remove photo"
-      }}
+      {{#if field}}
+        {{dds/secondary-button
+          class="avatar__remove"
+          thin=true
+          theme="sapphire"
+          onClick=(action "remove")
+          label="Remove photo"
+        }}
+      {{/if}}
   {{else}}
     <p>
       <div class="cropper-container">
