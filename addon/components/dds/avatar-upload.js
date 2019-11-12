@@ -62,6 +62,12 @@ export default Component.extend({
       file.readAsDataURL().then((result) => {
         component.set('imgSrc', result);
       })
+    },
+    remove() {
+      this.set('field', null);
+      if(this.get('signal') != undefined) {
+        this.incrementProperty('signal');
+      }
     }
   }
 });
