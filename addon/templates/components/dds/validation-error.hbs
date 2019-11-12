@@ -1,10 +1,10 @@
-<div class="max60">
+<div class={{if twoThird "max65p" "max60"}}>
   <span
-    class={{concat "field-error " (concat 
-        (concat type 
-         (if (eq float "left") " float-left" " float-right")
-         (if thin " thin"))
-         )}}
+    class={{concat
+         "field-error " type
+         (if (eq float "left") " pull-left" " pull-right")
+         (if thin " thin")
+         }}
   >
     {{message}}
   </span>
