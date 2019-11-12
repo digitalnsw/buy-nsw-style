@@ -1,6 +1,8 @@
 <div>
   {{input
-    class="au-text-input"
+    class=(concat "au-text-input"
+           (if thin " au-text-input--thin")
+           (if theme (concat " au-text-input--" theme)))
     value=field
     type=(if (or (or (or
           (user-agent "device.isMobile")
@@ -20,8 +22,8 @@
   }}
 </div>
 {{#if (and (or showError hasChanged) invalid)}}
-  {{dds/validation-error type="error" message=errorMessage float="left"}}
+  {{dds/validation-error type="error" thin=thin message=errorMessage float="left"}}
 {{else if (and apiError (or showError hasChanged))}}
-  {{dds/validation-error type="warning" message=apiError float="left"}}
+  {{dds/validation-error type="warning" thin=thin message=apiError float="left"}}
 {{/if}}
 <div class="clear-both"></div>
