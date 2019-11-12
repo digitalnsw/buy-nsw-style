@@ -24,4 +24,7 @@ svg.avatar {
     margin: 1rem 0;
     max-width: 9rem;
   }
+  .avatar__remove {
+    @include AU-space( margin-top, 1unit);
+  }
 }

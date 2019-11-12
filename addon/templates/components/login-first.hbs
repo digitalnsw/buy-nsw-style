@@ -3,6 +3,12 @@
   <h3 class="au-display-lg">You haven't signed in!</h3>
   <p>
     To access this page please
+    <a
+      class="au-btn au-btn--tertiary au-btn--dark no-padding"
+      onclick={{action "login"}}
+    >
+      login
+    </a>
     {{link-to "login" "sign-in"}}
     first.
   </p>

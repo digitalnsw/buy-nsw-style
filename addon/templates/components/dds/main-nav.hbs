@@ -3,24 +3,17 @@
     <div class="au-main-nav__menu-inner">
       <div class="au-main-nav__focus-trap-top"></div>
       <ul class="au-link-list" id="mainmenu">
-        <li class={{if (eq currentPath "cloud-sellers") "active"}}>
-          {{ link-to "Supplier list" "cloud-sellers" }}
-        </li>
-        <li class={{if (eq currentPath "cloud-search") "active"}}>
-          {{ link-to "Cloud products" "cloud-search" "all" }}
-        </li>
-        <li class={{if (eq currentPath "help-page") "active"}}>
-          {{ link-to "Help" "help-page" }}
-        </li>
-        {{# if auth.isSeller }}
-          <li class={{if (eq currentPath "seller-dashboard") "active"}}>
-            {{ link-to "Dashboard" "seller-dashboard" }}
-          </li>
-        {{else if auth.isBuyer }}
-          <li class={{if (eq currentPath "buyer-dashboard") "active"}}>
-            {{ link-to "Dashboard" "buyer-dashboard" }}
-          </li>
-        {{/ if }}
+        {{#each items as |item|}}
+          {{#unless item.hide}}
+            <li class={{if (eq auth.currentRouteName item.route) "active"}}>
+              {{#if item.param}}
+                {{ link-to item.label item.route item.param }}
+              {{else}}
+                {{ link-to item.label item.route }}
+              {{/if}}
+            </li>
+          {{/unless}}
+        {{/each}}
         {{# if auth.isAdmin }}
           <li><a href="/ops">Admin</a></li>
         {{/ if }}

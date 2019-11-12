@@ -1,6 +1,7 @@
 span.field-error {
   padding-top: 1rem;
   border-bottom: 4px solid white;
+  margin-bottom: 1rem;
   float: left;
   @include AU-media( sm ) {
     &:not(.float-left) {
