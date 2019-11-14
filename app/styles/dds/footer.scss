@@ -8,43 +8,42 @@
  */
 .au-footer {
 	@include AU-fontgrid( sm );
-	@include AU-space( padding, 3unit 0 3unit );
-	@include AU-space( border-top, 0.25unit solid $AU-color-foreground-border );
-	background-color: $AU-color-background;
+	@include AU-space( padding, 4.375unit 0 12unit ); 
+	background: AU-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1744 330"><path d="M1744 23.9c-332.5-110.5-517.9 196.2-955.1 227.5-384.4 27.5-560-33.6-660.9-69.2 0 0-17.9-8.9-50-16.6-12.1-3.4-23-5.7-33.2-6.4-13.5-2-28.6-3.5-44.9-4.1v560h1744V23.9z" fill="#002664"></path></svg>') 10% bottom/120% no-repeat $BUY-color-minimal-grey; 
 	font-family: $AU-font;
 	color: $AU-color-foreground-text;
 
-	p:last-child {
-		margin: 0;
-	}
-
-	&.au-footer--alt {
-		background-color: $AU-color-background-alt;
+	h4 {
+		@include AU-space( line-height, 2.3125unit );
 	}
 
 	&.au-footer--dark {
 		color: $AU-colordark-foreground-text;
-		border-color: $AU-colordark-foreground-border;
 		background-color:  $AU-colordark-background;
 	}
 
 	&.au-footer--black {
 		color: $AU-colordark-foreground-text;
-		border-color: $AU-colordark-foreground-border;
 		background-color: #313131;
-    padding: 1rem 0 2rem;
+		padding: 1rem 0 2rem;
 	}
 
 	&.au-footer--dark.au-footer--alt {
 		background-color:  $AU-colordark-background-alt;
 	}
 
-  a {
-    text-decoration: none;
-    &:hover {
-      text-decoration: underline;
-    }
-  }
+	a {
+		text-decoration: none;
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+}
+
+@media only screen and (max-width: $AU-media-xs) {
+	.au-footer {
+		@include AU-space( padding, 2unit 0 4unit );
+	}
 }
 
 
@@ -52,20 +51,125 @@
  * Footer `nav` navigation styling.
  */
 
-.au-footer__start {
-	@include AU-space( padding-left, 1unit );
+.footer__start {
 	.au-link-list {
-		@include AU-space( margin, 1unit 0 2unit 0 );
+		@include AU-space( padding, .625unit 0 1.5625unit 0 );
+		&.cols-2 {
+			> li {
+				@include AU-space( line-height, 2.3125unit );
+				@include AU-space( margin, .25unit .25unit .75unit 0 );
+			}
+		}
+	}
+}
+
+@media only screen and (max-width: $AU-media-xs) {
+	.footer__start .cols-2 {
+		column-count: 1;
 	}
 }
 
 .au-footer__end {
-	@include AU-space( padding-left, 1unit );
-	@include AU-space( padding-top, 1unit );
-	@include AU-space( margin-top, 1unit );
+	@include AU-space( margin-top, 3.75unit );
+	@include AU-space( padding, 2.5unit 0 0 0 );
 	border-top: 1px solid $AU-color-foreground-border;
+	.au-link-list.cols-2 {
+		@include AU-space( padding-top, 1.25unit );
+		@include AU-space( padding-bottom, 1.5625unit );
+		> li {
+			@include AU-space( line-height, 1.0625unit );
+			@include AU-space( margin, 0 0 .9375unit 0 );
+		}
+	}
+}
+
+@media only screen and (max-width: $AU-media-xs) {
+	.au-footer__end {
+		@include AU-space( margin-top, 1unit );
+	}
 }
 
 .au-footer--dark .au-footer__end {
 	border-top: 1px solid $AU-colordark-foreground-border;
+}
+
+// for any list divided into 2 columns; note - supported in IE10+
+.cols-2 {
+	column-count: 2;
+	@include AU-space( column-gap, 2unit );
+}
+
+// a 'beta' icon for any link; note - placed on right
+.beta {
+	background-color: $BUY-color-warning-shade; //#ff7f2f
+	border-radius: 999px;
+	color: #fff;
+	display: inline-block;
+	@include AU-space( font-size, 0.75unit );
+	font-weight: 500;
+	@include AU-space( line-height, 0.8125unit );
+	@include AU-space( margin, 0.3125unit );
+	@include AU-space( padding, 0.1875unit 0.625unit );
+	text-transform: uppercase;
+}
+
+// list containing social media and contact links (with icons)
+.footer__social {
+	li {
+		margin: 0;
+		// parent of svg icon wrapper (span with circular background) - align text to centre of icon circle:
+		a {
+			display: flex;
+			align-items: center;
+			// a circular background for svg icons - centre icon in circle:
+			> span {
+				align-items: center;
+				background-color: #002664;
+				border-radius: 999px;
+				display: flex;
+				@include AU-space( height, 2.125unit );
+				justify-content: center;
+				@include AU-space( margin, 0 1unit 0 0 );
+				@include AU-space( width, 2.125unit );
+				svg {
+					> path {
+						fill: white;
+					}
+					&.fa-envelope {
+						height: 20px;
+						width: 20px;
+					}
+					&.fa-facebook-f {
+						height: 25px;
+						position: relative;
+						top: 4px;
+						width: 25px;
+					}
+					&.fa-twitter {
+						height: 23px;
+						width: 23px;
+					}
+				}
+			}
+			// hide social media labels, from screen only:
+			> i {
+				@include AU-sronly();
+			}
+		}
+	}
+	&.au-link-list--inline li {
+		padding-right: 0;
+	}
+}
+
+@media only screen and (max-width: $AU-media-xs) {
+	.footer__start li a {
+		display: inline-block;
+	}
+}
+
+.footer__note {
+	@include AU-space( font-size, .8unit );
+	@include AU-space( line-height, 1.5unit );
+	@include AU-space( padding-bottom, 1.5unit );
 }
