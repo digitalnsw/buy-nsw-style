@@ -105,14 +105,22 @@
   .container-fluid {
     @include AU-space( padding-top, 2unit);
     @include AU-space( padding-bottom, 1unit);
+    @include AU-media( sm ) {
+      background-repeat: no-repeat;
+      background-position: 100% 0;
+      background-size: 360px;
+    }
   }
 
   .editing {
     @include AU-media( sm ) {
       background-image: url("/ict/buy-nsw-style/images/editing-header.png");
-      background-repeat: no-repeat;
-      background-position: 100% 0;
-      background-size: 360px;
+    }
+  }
+
+  .account {
+    @include AU-media( sm ) {
+      background-image: url("/ict/buy-nsw-style/images/account-header.png");
     }
   }
 }
@@ -132,7 +140,7 @@
 /* On screens that are 992px or less, shift the .editing background-image to prevent overlap with text */
 @media screen and (max-width: 992px) {
   .au-banner {
-    .editing {
+    .container-fluid {
       @include AU-media( sm ) {
         background-position: 100% 0;
       }

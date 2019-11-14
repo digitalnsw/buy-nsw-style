@@ -22,7 +22,7 @@
 }
 
 * + .au-progress-indicator,
-.au-body * + .au-progress-indicator, {
+.au-body * + .au-progress-indicator {
 	@include AU-space( margin-top, 1unit );
 }
 
@@ -283,5 +283,5 @@ a.au-progress-indicator__sub-item {
 			}
 		}
 	}
-
+	
 }

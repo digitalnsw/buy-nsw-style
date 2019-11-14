@@ -158,6 +158,12 @@
       color: $BUY-color-meta-tag;
     }
   }
+  &.warning {
+    color: $BUY-color-warning-shade;
+		a, b {
+			color: $BUY-color-warning-shade;
+		}
+  }
 }
 
 
