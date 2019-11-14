@@ -285,3 +285,75 @@ a.au-progress-indicator__sub-item {
 	}
 	
 }
+
+
+// progress (indicator) menu - sapphire variant
+
+.progress-menu.sapphire {
+	@include AU-space( padding-right, 1.5unit );
+	h4 {
+		@include AU-fontgrid( sm );
+		@include AU-space( padding-left, .75unit );
+	}
+	.au-progress-indicator {
+		border-top-color: $NSW-color-background-alt-shade;
+		@include AU-space( margin-top, .5unit );
+	}
+	.au-progress-indicator__link {
+		border-left: none;
+		@include AU-space( padding, .75unit 2.5unit .75unit .75unit );
+		&:after {
+			left: auto;
+			@include AU-space( right, .5unit );
+			background-image: none;
+		}
+		&.au-progress-indicator__link--doing {
+			&:after {
+				background-image: AU-svguri('<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">' +
+					'<circle fill="#{ $AU-color-foreground-action }" cx="6.5" cy="12" r="1.5"></circle>' +
+					'<circle fill="#{ $AU-color-foreground-action }" cx="12" cy="12" r="1.5"></circle>' +
+					'<circle fill="#{ $AU-color-foreground-action }" cx="17.5" cy="12" r="1.5"></circle>' +
+				'</svg>');
+			}
+		}
+		&.au-progress-indicator__link--done {
+			&:after {
+				background-image: AU-svguri('<svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">' +
+					'<path fill="#{ $BUY-color-success-shade }" d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"/>' +
+				'</svg>');
+				width: 1.4rem;
+			}
+		}
+		&.au-progress-indicator__link--review {
+			&:after {
+				background-image: AU-svguri('<svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">' +
+					'<path fill="#{ $BUY-color-warning-shade }" d="M256 8C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm0 110c23.196 0 42 18.804 42 42s-18.804 42-42 42-42-18.804-42-42 18.804-42 42-42zm56 254c0 6.627-5.373 12-12 12h-88c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h12v-64h-12c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h64c6.627 0 12 5.373 12 12v100h12c6.627 0 12 5.373 12 12v24z"/>' +
+				'</svg>');
+				width: 1.4rem;
+			}
+		}
+		&.au-progress-indicator__link--user-edit {
+			&:after {
+				background-image: AU-svguri('<svg viewBox="0 0 640 512" xmlns="http://www.w3.org/2000/svg">' +
+					'<path fill="#{ $BUY-color-useredit-shade }" d="M224 256c70.7 0 128-57.3 128-128S294.7 0 224 0 96 57.3 96 128s57.3 128 128 128zm89.6 32h-16.7c-22.2 10.2-46.9 16-72.9 16s-50.6-5.8-72.9-16h-16.7C60.2 288 0 348.2 0 422.4V464c0 26.5 21.5 48 48 48h274.9c-2.4-6.8-3.4-14-2.6-21.3l6.8-60.9 1.2-11.1 7.9-7.9 77.3-77.3c-24.5-27.7-60-45.5-99.9-45.5zm45.3 145.3l-6.8 61c-1.1 10.2 7.5 18.8 17.6 17.6l60.9-6.8 137.9-137.9-71.7-71.7-137.9 137.8zM633 268.9L595.1 231c-9.3-9.3-24.5-9.3-33.8 0l-37.8 37.8-4.1 4.1 71.8 71.7 41.8-41.8c9.3-9.4 9.3-24.5 0-33.9z"/>' +
+				'</svg>');
+				width: 1.4rem;
+			}
+		}
+		&.au-progress-indicator__link--lock {
+			&:after {
+				background-image: AU-svguri('<svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">' +
+					'<path fill="#{ $BUY-color-lock-shade }" d="M400 224h-24v-72C376 68.2 307.8 0 224 0S72 68.2 72 152v72H48c-26.5 0-48 21.5-48 48v192c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V272c0-26.5-21.5-48-48-48zm-104 0H152v-72c0-39.7 32.3-72 72-72s72 32.3 72 72v72z"/>' +
+				'</svg>');
+				width: 1.1rem;
+			}
+		}
+		&.active {
+			background-color: grey;
+			font-family: MontserratRegular;
+		}
+	}
+	.au-progress-indicator__status {
+		display: none;
+	}
+}
