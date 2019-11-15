@@ -1,1 +1,1 @@
-export { default } from 'buy-nsw-style/components/dds/main-nav';
+export { default } from '@digitalnsw/buy-nsw-style/components/dds/main-nav';

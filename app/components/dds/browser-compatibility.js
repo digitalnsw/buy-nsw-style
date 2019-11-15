@@ -1,1 +1,1 @@
-export { default } from 'buy-nsw-style/components/dds/browser-compatibility';
+export { default } from '@digitalnsw/buy-nsw-style/components/dds/browser-compatibility';

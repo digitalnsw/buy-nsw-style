@@ -1,1 +1,1 @@
-export { default } from 'buy-nsw-style/components/dds/template-header';
+export { default } from '@digitalnsw/buy-nsw-style/components/dds/template-header';

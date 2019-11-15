@@ -1,1 +1,1 @@
-export { default } from 'buy-nsw-style/components/logout-first';
+export { default } from '@digitalnsw/buy-nsw-style/components/logout-first';

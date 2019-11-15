@@ -1,1 +1,1 @@
-export { default } from 'buy-nsw-style/components/dds/info-box';
+export { default } from '@digitalnsw/buy-nsw-style/components/dds/info-box';

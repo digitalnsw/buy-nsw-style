@@ -1,1 +1,1 @@
-export { default } from 'buy-nsw-style/components/dds/progress-status';
+export { default } from '@digitalnsw/buy-nsw-style/components/dds/progress-status';
